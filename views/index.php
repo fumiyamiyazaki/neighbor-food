@@ -24,10 +24,16 @@
       <h1>neighbor - <span>Food</span></h1>
       <p class="about_p">今すぐ行けるラーメン屋を探せる</p>
       <p class="about_text">即行けラーメン検索プラットフォーム</p>
+      <p class="near_btn"><a href="#">近くのお店</a></p>
     </div>
 
     <div class="main_right">
       <img src="../img/main.jpg" alt="メインの画像" class="right_img">
+      <div class="regist_link">
+        <p><a href="registrations/new.php">新規登録</a></p>
+        /
+        <p><a href="registrations/login.php">ログイン</a></p>
+      </div>
     </div>
 
   </div>

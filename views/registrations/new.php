@@ -29,6 +29,7 @@
       </form>
 
     </div>
+    <p><a href="login.php">ログイン</a></p>
 
 
 

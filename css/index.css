@@ -13,6 +13,9 @@
   width: 40%;
   height: 100vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 h1 {
   width: 100%;
@@ -43,6 +46,21 @@ h1 span {
   position: absolute;
   top: 48%;
 }
+.near_btn {
+  width: 15rem;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  position: absolute;
+  top: 70%;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+.near_btn a {
+  color: black;
+}
 
 .main_right {
   width: 60%;
@@ -55,6 +73,12 @@ h1 span {
   filter: blur(3px);
   /* position: absolute; */
   opacity: 0.6;
+}
+.regist_link {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
 
 

@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+.login_content {
+  width: 70%;
+  height: 80%;
+  background-color: #fff;
+}
+.login_title {
+  height: 50px;
+  border-bottom: 3px solid #F7F7F7;
+}
+.login_title p {
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+}

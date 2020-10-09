@@ -1,3 +1,85 @@
 @charset "UTF-8";
 
+/* セクション１ */
 
+.main_content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+}
+
+.main_left {
+  width: 40%;
+  height: 100vh;
+  position: relative;
+}
+h1 {
+  width: 100%;
+  height: 20px;
+  font-size: 40px;
+  text-align: center;
+  position: absolute;
+  top: 20%;
+  font-family: cursive;
+}
+h1 span {
+  font-size: 45px;
+  color: red;
+}
+.about_p {
+  width: 100%;
+  height: 30px;
+  color: #333;
+  font-size: 30px;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+}
+.about_text {
+  width: 100%;
+  height: 20px;
+  text-align: center;
+  position: absolute;
+  top: 48%;
+}
+
+.main_right {
+  width: 60%;
+  height: 100vh;
+
+}
+.right_img {
+  width: 100%;
+  height: 100%;
+  filter: blur(3px);
+  /* position: absolute; */
+  opacity: 0.6;
+}
+
+
+/* セクション２ */
+.introduction {
+  width: 100%;
+  height: 100vh;
+  background-color: #e8d94e;
+}
+.head_int {
+  width: 100%;
+  height: 20%;
+  position: relative;
+}
+.flame_img {
+  width: 100%;
+  height: 100%;
+}
+.head_p {
+  height: 100%;
+  width: 100%;
+  font-size: 50px;
+  color: #fff;
+  position: absolute;
+  top: 30px;
+  text-align: center;
+  font-family: cursive;
+}

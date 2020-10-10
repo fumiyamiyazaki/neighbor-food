@@ -43,6 +43,10 @@
   height: 2rem;
   display: block;
   border: 3px solid #f7f7f7;
+  outline: none;
+}
+.login_form input:focus {
+  border-color: #dfdfdf;
 }
 .login_form button {
   width: 100%;
@@ -55,3 +59,57 @@
   color: #fff;
   margin-top: 20px;
 }
+
+
+
+/* レスポンシブ */
+@media screen and (max-width: 959px) {
+  .login_wrapp {
+    width: 80%;
+    height: 70%;
+  }
+  .login_top {
+    height: 15%;
+  }
+  .login_top p {
+    line-height: 90px;
+    font-size: 4vw;
+  }
+  .login_form button {
+    font-size: 3vw;
+  }
+
+
+
+}
+
+@media screen and (max-width: 559px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* cc */

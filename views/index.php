@@ -4,8 +4,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
 <title>my_app</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 <script type="text/javascript" src="../js/jquery.js"></script>
@@ -41,9 +42,20 @@
 
   <section>
   <div class="introduction">
+
     <div class="head_int">
       <img src="../img/flame.png" alt="暖簾の画像" class="flame_img">
       <p class="head_p">introduction</p>
+    </div>
+
+    <div class="content_int">
+      <div class="int_text">
+        <p>heighbor-foodは今すぐ行ける、今開店しているラーメン屋が一目でわかる
+          ラーメン屋専門プラットホームです。</p>
+      </div>
+      <div class="how_to">
+
+      </div>
     </div>
 
   </div>

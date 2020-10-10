@@ -4,8 +4,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
 <title>my_app</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="../../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../../css/login.css">

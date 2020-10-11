@@ -93,14 +93,36 @@
       <div class="step_btn">
         <p><a href="registrations/new.php">会員登録する</a></p>
       </div>
-    </div>
 
+      <div class="int2_wrapp">
+
+        <div class="int2_text">
+          <h3>neighbor-foodに登録しているお店のブログが読める</h3>
+          <p>お得な情報が掲載されているかも</p>
+        </div>
+
+        <div class="int_bottom">
+          <div class="int-img_wrapp">
+            <div class="int2_img">
+              <img src="../img/blog.png" alt="携帯ブログの画像">
+            </div>
+            <div class="int-blog_btn">
+              <p><a href="#">ブログを見に行く</a></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
   </section>
 
   <section>
   <div class="store_wrapp">
-    
+    <div class="">
+
+    </div>
   </div>
   </section>
 

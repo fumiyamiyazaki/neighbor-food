@@ -93,6 +93,7 @@ h1 span {
   width: 100%;
   height: 100vh;
   background-color: #e8d94e;
+  position: relative;
 }
 .head_int {
   width: 100%;
@@ -112,6 +113,70 @@ h1 span {
   top: 15%;
   text-align: center;
   font-family: cursive;
+}
+
+.content_wrapp {
+  margin-top: 50px;
+}
+.int_text h3 {
+  font-size: 1.8vw;
+  font-weight: bold;
+  font-family: emoji;
+  text-align: center;
+  color: #fff;
+}
+
+.step_wrapp {
+  margin-top: 100px;
+}
+.step {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.step li {
+  width: calc(100% / 3);
+}
+.step_img {
+  width: 150px;
+  height: 150px;
+  border: 2px solid green;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+.step_img img {
+  width: 100%;
+  height: 100%;
+}
+.step_text {
+  margin-top: 20px;
+}
+.step_text h4 {
+  font-size: 2.5vw;
+  text-align: center;
+  color: #fff;
+}
+.step_text p {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.step_btn {
+  margin-top: 50px;
+}
+.step_btn p {
+  height: 60px;
+  width: 300px;
+  border: 1px solid red;
+  border-radius: 20px;
+  background-color: red;
+  text-align: center;
+  line-height: 60px;
+  margin: 0 auto;
+}
+.step_btn a {
+  color: #fff;
 }
 
 
@@ -154,6 +219,8 @@ h1 span {
     font-size: 5vw;
     top: 30px;
   }
+
+
 
 
 

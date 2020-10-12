@@ -46,10 +46,14 @@
       $(".btn_man1").css("display", "flex");
     });
     $(".int-blog_btn").hover(function() {
-      $(".btn_man2").css("display", "flex");
+      $(".btn_man2").css("display", "flex").animate({"right":"-20vw"},1000, function() {
+        $(".btn_man2").fadeOut(2000);
+      });
     });
     $(".int-store_btn").hover(function() {
-      $(".btn_man3").css("display", "flex");
+      $(".btn_man3").css("display", "flex").animate({"right":"10vw"},1000, function() {
+        $(".btn_man3").fadeOut(2000);
+      });
     });
   }
 </script>

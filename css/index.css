@@ -97,7 +97,7 @@ h1 span {
 }
 .head_int {
   width: 100%;
-  height: 20%;
+  height: 20vh;
   position: relative;
 }
 .flame_img {
@@ -134,7 +134,7 @@ h1 span {
   justify-content: space-around;
   align-items: center;
 }
-.step li {
+.step_card {
   height: 40vh;
   width: calc(100% / 4);
   background-color: #FFFACD;
@@ -244,6 +244,108 @@ h1 span {
   color: #fff;
 }
 
+/* セクション3 */
+.int-store_wrapp {
+  height: 100%;
+  /* background-image: url(../img/store_bg.jpg); */
+  padding: 50px;
+  background-color: #01511e;
+}
+.store_head {
+
+}
+.store_head h3 {
+  font-size: 1.8vw;
+  font-weight: bold;
+  font-family: emoji;
+  text-align: center;
+  color: #fff;
+}
+
+.store-content_wrapp {
+  height: 60vh;
+  width: 100%;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: #FFFACD;
+  margin-top: 50px;
+  padding: 100px;
+}
+
+.store-img_front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.store-man_img {
+  height: 50vh;
+  width: 30vw;
+  position: absolute;
+  top: -8vh;
+}
+.store-img_back {
+  display: none;
+}
+.store-img_wrapp {
+  display: flex;
+  justify-content: space-around;
+}
+.store-img_top {
+  width: calc(100%/3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.store-phone_img {
+  height: 40vh;
+  width: 10vw;
+  /* background-color: #fff; */
+}
+.store-img_middle {
+  width: calc(100%/3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.store-message_img {
+  height: 20vh;
+  width: 20vw;
+}
+.store-img_bottom {
+  width: calc(100%/3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.store-pc_img {
+  height: 40vh;
+  width: 15vw;
+}
+.int-store_btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+.int-store_btn p {
+  height: 60px;
+  width: 300px;
+  border: 1px solid #e8d94e;
+  border-radius: 20px;
+  background-color: #e8d94e;
+  text-align: center;
+  line-height: 60px;
+  /* position: absolute; */
+
+}
+.int-store_btn a {
+  color: black;
+}
+
+
+
 
 
 
@@ -285,12 +387,14 @@ h1 span {
     top: 30px;
   }
 
-
-
-
-
-
 }
+
+
+
+
+
+
+
 
 @media screen and (max-width: 559px) {
   /* セクション１ */

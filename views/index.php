@@ -10,7 +10,36 @@
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 <script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery-css-transform.js"></script>
+<script type="text/javascript" src="../js/rotate3Di.js"></script>
 <script>
+  $(function() {
+    hover();
+    spin();
+  });
+
+  function hover() {
+    $(".store-img_front").hover(function() {
+      $(this).css("display", "none");
+      $(".store-img_back").fadeIn(2000);
+    });
+  }
+
+
+  function spin() {
+    $('#card').hover(
+    function () {$(this).rotate3Di('flip', 500);},
+    function () {$(this).rotate3Di('unflip', 500);}
+    );
+    $('#card2').hover(
+    function () {$(this).rotate3Di('flip', 500);},
+    function () {$(this).rotate3Di('unflip', 500);}
+    );
+    $('#card3').hover(
+    function () {$(this).rotate3Di('flip', 500);},
+    function () {$(this).rotate3Di('unflip', 500);}
+    );
+  }
 </script>
 </head>
 <body>
@@ -58,7 +87,7 @@
       <div class="step_wrapp">
         <ul class="step">
           <!-- step1 -->
-          <li>
+          <li class="step_card" id="card">
             <div class="step_img">
               <img src="../img/step1.png" alt="step1の画像">
             </div>
@@ -68,7 +97,7 @@
             </div>
           </li>
           <!-- step2 -->
-          <li>
+          <li class="step_card" id="card2">
             <div class="step_img">
               <img src="../img/step2.png" alt="ste2の画像">
             </div>
@@ -78,7 +107,7 @@
             </div>
           </li>
           <!-- step3 -->
-          <li>
+          <li class="step_card" id="card3">
             <div class="step_img">
               <img src="../img/step3.png" alt="step3の画像">
             </div>
@@ -119,12 +148,46 @@
   </section>
 
   <section>
-  <div class="store_wrapp">
-    <div class="">
+  <div class="int-store_wrapp">
+
+    <div class="store_head">
+      <h3>店側として登録すると、お店の情報やブログを掲載し、広告としても利用できる</h3>
+    </div>
+
+    <div class="store-content_wrapp">
+
+      <div class="store-img_front">
+        <img src="../img/store_pict0.png" alt="人の画像" class="store-man_img">
+      </div>
+
+      <div class="store-img_back">
+        <div class="store-img_wrapp">
+          <div class="store-img_top">
+            <img src="../img/store_pict1.png" alt="スマホ写真" class="store-phone_img">
+          </div>
+
+          <div class="store-img_middle">
+            <img src="../img/store_pict2.png" alt="メッセージ写真" class="store-message_img">
+          </div>
+
+          <div class="store-img_bottom">
+            <img src="../img/store_pict4.png" alt="PC写真" class="store-pc_img">
+          </div>
+        </div>
+
+      </div>
 
     </div>
+
+    <div class="int-store_btn">
+      <p><a href="#">店側として会員登録する</a></p>
+    </div>
+
   </div>
   </section>
+
+
+
 
 
 </body>

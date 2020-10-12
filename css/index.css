@@ -169,6 +169,7 @@ h1 span {
 
 .step_btn {
   margin-top: 100px;
+  position: relative;
 }
 .step_btn p {
   height: 60px;
@@ -183,9 +184,21 @@ h1 span {
 .step_btn a {
   color: #fff;
 }
+.btn_man1 {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.btn_man1 img {
+  height: 20vh;
+  width: 15vw;
+  position: absolute;
+  top: 4vh;
+}
+
 
 .int2_wrapp {
-  margin-top: 100px;
+  margin-top: 150px;
   padding-bottom: 50px;
 }
 .int2_text h3 {
@@ -228,13 +241,14 @@ h1 span {
 .int-blog_btn {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .int-blog_btn p {
   height: 60px;
   width: 300px;
-  border: 1px solid green;
+  border: 1px solid navy;
   border-radius: 20px;
-  background-color: green;
+  background-color: navy;
   text-align: center;
   line-height: 60px;
   /* position: absolute; */
@@ -242,6 +256,18 @@ h1 span {
 }
 .int-blog_btn a {
   color: #fff;
+}
+
+.btn_man2 {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.btn_man2 img {
+  height: 20vh;
+  width: 15vw;
+  position: absolute;
+  top: 3vh;
 }
 
 /* セクション3 */
@@ -328,6 +354,7 @@ h1 span {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  position: relative;
 }
 .int-store_btn p {
   height: 60px;
@@ -342,6 +369,19 @@ h1 span {
 }
 .int-store_btn a {
   color: black;
+}
+
+.btn_man3 {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.btn_man3 img {
+  height: 20vh;
+  width: 15vw;
+  position: absolute;
+  top: -9vh;
+  right: 25vw;
 }
 
 

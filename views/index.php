@@ -16,6 +16,7 @@
   $(function() {
     hover();
     spin();
+    btn_man();
   });
 
   function hover() {
@@ -24,7 +25,6 @@
       $(".store-img_back").fadeIn(2000);
     });
   }
-
 
   function spin() {
     $('#card').hover(
@@ -39,6 +39,18 @@
     function () {$(this).rotate3Di('flip', 500);},
     function () {$(this).rotate3Di('unflip', 500);}
     );
+  }
+
+  function btn_man() {
+    $(".step_btn").hover(function() {
+      $(".btn_man1").css("display", "flex");
+    });
+    $(".int-blog_btn").hover(function() {
+      $(".btn_man2").css("display", "flex");
+    });
+    $(".int-store_btn").hover(function() {
+      $(".btn_man3").css("display", "flex");
+    });
   }
 </script>
 </head>
@@ -121,6 +133,9 @@
 
       <div class="step_btn">
         <p><a href="registrations/new.php">会員登録する</a></p>
+        <div class="btn_man1">
+          <img src="../img/btn_man1.png" alt="人の画像">
+        </div>
       </div>
 
       <div class="int2_wrapp">
@@ -137,6 +152,9 @@
             </div>
             <div class="int-blog_btn">
               <p><a href="#">ブログを見に行く</a></p>
+              <div class="btn_man2">
+                <img src="../img/btn_man2.png" alt="人の画像" class="btn_man2">
+              </div>
             </div>
           </div>
         </div>
@@ -181,6 +199,9 @@
 
     <div class="int-store_btn">
       <p><a href="#">店側として会員登録する</a></p>
+      <div class="btn_man3">
+        <img src="../img/btn_man3.png" alt="人の画像" class="btn_man3">
+      </div>
     </div>
 
   </div>

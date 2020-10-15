@@ -48,7 +48,7 @@
       </div>
 
     </div>
-    <p><a href="new.php">新規登録</a></p>
+    <!-- <p><a href="new.php">新規登録</a></p> -->
 
 
 </body>

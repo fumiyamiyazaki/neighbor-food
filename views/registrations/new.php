@@ -56,7 +56,7 @@
     </div>
 
   </div>
-    <p><a href="login.php">ログイン</a></p>
+    <!-- <p><a href="login.php">ログイン</a></p> -->
 
 
 

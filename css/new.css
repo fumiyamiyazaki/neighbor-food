@@ -66,18 +66,32 @@
 
 /* レスポンシブ */
 @media screen and (max-width: 959px) {
+  .content_wrapp {
+
+  }
   .new_wrapp {
-    width: 80%;
+    width: 90%;
     height: 70%;
   }
   .new_top {
     height: 15%;
   }
   .new_top p {
-    line-height: 90px;
+    line-height: 10vh;
     font-size: 4vw;
   }
+  .new_bottom {
+    padding: 0 20px;
+    height: 85%;
+  }
+  .new_form label {
+    font-size: 20px;
+  }
+  .new_form input {
+    height: 5vh;
+  }
   .new_form button {
+    height: 6vh;
     font-size: 3vw;
   }
 
@@ -87,5 +101,40 @@
 }
 
 @media screen and (max-width: 559px) {
+  .content_wrapp {
+    height: calc(100vh - 60px);
+    background-color: #fff;
+  }
+  .shared_header {
+    height: 60px;
+  }
+  .header_title p a {
+    font-size: 15px;
+    margin-left: 15px;
+  }
+  .header_title p a span {
+    font-size: 20px;
+  }
+  .shared_header li a {
+    font-size: 15px;
+  }
+
+  .new_wrapp {
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
+  .new_top {
+    height: 10%;
+  }
+  .new_top p {
+    line-height: 10vh;
+  }
+  .new_bottom {
+    height: 90%;
+  }
+  .new_form label {
+    font-size: 16px;
+  }
 
 }

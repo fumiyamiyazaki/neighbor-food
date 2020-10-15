@@ -62,7 +62,7 @@ h1 span {
   top: 70%;
   border: 1px solid black;
   border-radius: 20px;
-  margin: 0 auto;
+  margin: 0 auto
 }
 .near_btn a {
   color: black;
@@ -71,7 +71,6 @@ h1 span {
 .main_right {
   width: 60%;
   height: 100vh;
-
 }
 .right_img {
   width: 100%;
@@ -174,9 +173,9 @@ h1 span {
 .step_btn p {
   height: 60px;
   width: 300px;
-  border: 1px solid red;
+  border: 1px solid #FF4F50;
   border-radius: 20px;
-  background-color: red;
+  background-color: #FF4F50;
   text-align: center;
   line-height: 60px;
   margin: 0 auto;
@@ -246,9 +245,9 @@ h1 span {
 .int-blog_btn p {
   height: 60px;
   width: 300px;
-  border: 1px solid navy;
+  border: 1px solid #1E90FF;
   border-radius: 20px;
-  background-color: navy;
+  background-color: #1E90FF;
   text-align: center;
   line-height: 60px;
   /* position: absolute; */
@@ -275,7 +274,8 @@ h1 span {
   height: 100%;
   /* background-image: url(../img/store_bg.jpg); */
   padding: 50px;
-  background-color: #01511e;
+  background-color: #339900;
+  /* background-color: #01511e; */
 }
 .store_head {
 
@@ -424,7 +424,22 @@ h1 span {
   /* セクション２ */
   .head_p {
     font-size: 5vw;
-    top: 30px;
+    top: 5vh;
+  }
+  .int_text h3 {
+    font-size: 2.1vh;
+  }
+  .step_card {
+    height: 31vh;
+  }
+  .step_btn p {
+    width: 50vw;
+  }
+  .int2_text h3 {
+    font-size: 2.1vh;
+  }
+  .int2_text p {
+    font-size: 1.8vh; 
   }
 
 }
@@ -498,6 +513,7 @@ h1 span {
     font-size: 5vw;
     top: 30px;
   }
+
 
 
 }

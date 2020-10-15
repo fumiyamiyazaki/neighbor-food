@@ -70,7 +70,7 @@
       <h1>neighbor - <span>Food</span></h1>
       <h2 class="about_p">今すぐ行けるラーメン屋を探せる</h2>
       <h3 class="about_text">即行けラーメン検索プラットフォーム</h3>
-      <p class="near_btn"><a href="#">近くのお店</a></p>
+      <div class="near_btn"><a href="#">近くのお店</a></div>
     </div>
 
     <div class="main_right">
@@ -96,7 +96,7 @@
     <div class="content_wrapp">
 
       <div class="int_text">
-        <h3>heighbor-foodは今すぐ行ける、今開店しているラーメン屋が一目でわかる
+        <h3>heighbor-foodは今すぐ行ける、今開店しているラーメン屋が一目でわかる<br>
           ラーメン屋専門プラットホームです。</h3>
       </div>
 

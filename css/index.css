@@ -1,10 +1,7 @@
 @charset "UTF-8";
-/* *{
+*{
   box-sizing: border-box;
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-} */
+}
 
 /* セクション１ */
 
@@ -91,42 +88,139 @@ h1 span {
 .introduction {
   width: 100%;
   height: 100%;
-  background-color: #e8d94e;
+  background-color: #fff;
   position: relative;
+  margin-top: 200px;
 }
 .head_int {
   width: 100%;
   height: 20vh;
   position: relative;
 }
-.flame_img {
-  width: 100%;
-  height: 100%;
-}
 .head_p {
-  height: 100%;
-  width: 100%;
   font-size: 50px;
-  color: #fff;
-  position: absolute;
-  top: 15%;
-  text-align: center;
   font-family: cursive;
+  margin-left: 20px;
+  color: #FF4F50;
 }
 
 .content_wrapp {
   margin-top: 50px;
 }
-.int_text h3 {
-  font-size: 1.8vw;
-  font-weight: bold;
-  font-family: emoji;
-  text-align: center;
-  color: #fff;
+.int_text p {
+  font-size: 1vw;
+  font-family: serif;
+  margin-left: 60px;
+  margin-bottom: 2.5vw;
+  color: #111111;
 }
 
-.step_wrapp {
+/* first_wrapp */
+.first_wrapp {
+  height: 100%;
+  width: 100%;
+}
+.first_img {
+  height: 55vh;
+  width: 20vw;
+  margin-top: 150px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.first_img img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 5vh;
+  z-index: 2;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+}
+.useage {
+  height: 15vh;
+  width: 50vw;
+  background-color: #f4f4f4;
+  position: absolute;
+  left: 9vw;
+  /* opacity: 0.8; */
+  z-index: 1;
+}
+.useage h3 {
+  height: 100%;
+  width: 100%;
+  font-size: 1.8vw;
+  text-align: center;
+  line-height: 10vh;
+  writing-mode: vertical-rl;
+  font-family: cursive;
+  color: #FF4F50;
+}
+
+/* second_wrapp */
+.second_wrapp {
+  height: 100%;
+  width: 100%;
+  margin-top: 200px;
+}
+.second_img {
+  height: 60vh;
+  width: 90vw;
+  margin: 0 auto;
+  /* padding: 0 20px; */
+}
+.second_img img {
+  height: 100%;
+  width: 100%;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+}
+
+/* third_wrapp */
+.third_wrapp {
+  height: 100%;
+  width: 100%;
   margin-top: 100px;
+}
+.third_img {
+  height: 60vh;
+  width: 50vw;
+  position: relative;
+}
+.third_img img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 17vh;
+  left: 2vw;
+  z-index: 2;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+}
+.usage_int {
+  height: 50vh;
+  width: 70vw;
+  background-color: #f4f4f4;
+  position: absolute;
+  top: 7vh;
+  right: -50vw;
+  z-index: 1;
+}
+.usage_int p {
+  font-size: 1vw;
+  font-family: serif;
+  position: absolute;
+  top: 5vh;
+  right: 15vw;
+  color: #111111;
+}
+.usage_int p span  {
+  font-size: 1.3vw;
+  color: #FF4F50;
+}
+
+
+
+
+.step_wrapp {
+  margin-top: 300px;
 }
 .step {
   display: flex;
@@ -136,8 +230,8 @@ h1 span {
 .step_card {
   height: 40vh;
   width: calc(100% / 4);
-  background-color: #FFFACD;
-  border: 1px solid #FFFACD;
+  background-color: #ffff;
+  border: 3px solid #f4f4f4;
   border-radius: 20px;
   padding: 20px;
 }
@@ -167,37 +261,32 @@ h1 span {
 }
 
 .step_btn {
+  height: 30vh;
+  width: 100vw;
   margin-top: 100px;
   position: relative;
+  overflow: hidden;
 }
 .step_btn p {
-  height: 60px;
-  width: 300px;
-  border: 1px solid #FF4F50;
-  border-radius: 20px;
-  background-color: #FF4F50;
-  text-align: center;
-  line-height: 60px;
-  margin: 0 auto;
-}
-.step_btn a {
-  color: #fff;
-}
-.btn_man1 {
-  display: flex;
-  justify-content: center;
-  display: none;
-}
-.btn_man1 img {
-  height: 20vh;
-  width: 15vw;
+  height: 8vh;
+  width: 60vw;
+  line-height: 6vh;
   position: absolute;
-  top: 4vh;
+  right: -5vw;
+  border: 10px solid #f4f4f4;
+  background-color: #ffff;
 }
+
+.step_btn a {
+  color: #222222;
+  margin-left: 50px;
+  font-family: serif;
+}
+
 
 
 .int2_wrapp {
-  margin-top: 150px;
+  margin-top: 100px;
   padding-bottom: 50px;
 }
 .int2_text h3 {
@@ -205,7 +294,7 @@ h1 span {
   font-weight: bold;
   font-family: emoji;
   text-align: center;
-  color: #fff;
+  color: #111111;
 }
 .int2_text p {
   font-size: 1.4vw;
@@ -222,8 +311,8 @@ h1 span {
 .int-img_wrapp {
   display: flex;
   justify-content: space-around;
-  background-color: #FFFACD;
-  border: 1px solid #FFFACD;
+  /* background-color: #FFFACD;
+  border: 1px solid #FFFACD; */
   border-radius: 20px;
   padding: 20px;
 }
@@ -439,7 +528,7 @@ h1 span {
     font-size: 2.1vh;
   }
   .int2_text p {
-    font-size: 1.8vh; 
+    font-size: 1.8vh;
   }
 
 }

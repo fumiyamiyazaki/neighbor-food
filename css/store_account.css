@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+.store_account-wrapp {
+  height: 100%;
+  width: 100vw;
+  display: flex;
+}
+
+/* side_bar */
+.store_side-bar {
+  height: auto;
+  width: 300px;
+  background-color: #e8d94e;
+}
+.store_nav {
+  padding: 50px 0 0 10px;
+}
+.store_nav li {
+  margin-bottom: 30px;
+}
+
+
+
+/* main_content */
+.store_main-content {
+  height: 100%;
+  width: 100%;
+}
+
+.store_main-pict {
+  height: 400px;
+  width: 100%;
+  background-color: #f4f4f4;
+  padding: 0 100px;
+}
+
+.pict_flame {
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 100px;
+}
+.pict_flame img {
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+}
+
+.store_sub-cont {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+  background-color: #f1f9ff;
+}
+.store_name {
+  margin-left: 30px;
+  font-weight: bold;
+}
+.store_locate {
+  margin-left: 10px;
+  color: #909090;
+}
+.fav_icon {
+  margin-right: 50px;
+}
+
+/* article */
+.store_articles {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px;
+  background-color: #fff;
+}
+.new_article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.new_article p {
+  margin-top: 30px;
+}
+.store_article {
+  height: 250px;
+  width: 200px;
+  margin: 0 23px 50px 23px;
+  background-color: #f4f4f4;
+}

@@ -101,6 +101,7 @@ h1 span {
   font-size: 50px;
   font-family: cursive;
   margin-left: 20px;
+  letter-spacing: 0.5rem;
   color: #FF4F50;
 }
 
@@ -286,60 +287,77 @@ h1 span {
 
 
 .int2_wrapp {
+  height: 100%;
+  width: 100%;
   margin-top: 100px;
   padding-bottom: 50px;
-}
-.int2_text h3 {
-  font-size: 1.8vw;
-  font-weight: bold;
-  font-family: emoji;
-  text-align: center;
-  color: #111111;
-}
-.int2_text p {
-  font-size: 1.4vw;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.int_bottom {
-  height: 100%;
-  width: 100%;
-  margin-top: 100px;
-  padding: 0 100px;
-}
-.int-img_wrapp {
-  display: flex;
-  justify-content: space-around;
-  /* background-color: #FFFACD;
-  border: 1px solid #FFFACD; */
-  border-radius: 20px;
-  padding: 20px;
-}
-.int2_img {
-  height: 35vh;
-  width: 15vw;
-  /* position: absolute; */
-
-}
-.int2_img img {
-  height: 100%;
-  width: 100%;
-}
-.int-blog_btn {
-  display: flex;
-  align-items: center;
   position: relative;
 }
-.int-blog_btn p {
+
+.blog_wrapp {
+  height: 30vh;
+  width: 100%;
+  position: relative;
+}
+.blog_wrapp h3 {
+  font-size: 55px;
+  font-family: cursive;
+  writing-mode: vertical-lr;
+  letter-spacing: 2rem;
+  position: absolute;
+  top: -15vh;
+  left: 18vw;
+  z-index: 3;
+  color: #FF4F50;
+}
+.blog_page {
+  height: 80vh;
+  width: 60vw;
+  position: absolute;
+  top: 20vh;
+  padding: 20px 0;
+  z-index: 2;
+  background-color: #f4f4f4;
+}
+.blog_page img {
+  height: 100%;
+  width: 80%;
+  position: absolute;
+  top: -13vh;
+  left: 10vw;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+  -webkit-transform: rotate(10deg);
+}
+
+.int2_text {
+  height: 20vh;
+  width: 40vw;
+  position: absolute;
+  right: 0;
+  padding: 50px 0 0 70px;
+  background-color: #f4f4f4;
+}
+.int2_text p {
+  font-size: 1vw;
+  font-family: serif;
+}
+
+
+
+.int-blog_btn {
   height: 60px;
   width: 300px;
+  position: absolute;
+  bottom: -60vh;
+}
+.int-blog_btn p {
+  height: 100%;
+  width: 100%;
   border: 1px solid #1E90FF;
   border-radius: 20px;
   background-color: #1E90FF;
   text-align: center;
   line-height: 60px;
-  /* position: absolute; */
 
 }
 .int-blog_btn a {

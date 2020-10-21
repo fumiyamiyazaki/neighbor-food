@@ -176,18 +176,21 @@
 
       <div class="int2_wrapp">
 
-        <div class="int2_text">
-          <h3>neighbor-foodに登録しているお店のブログが読める</h3>
-          <p>お得な情報が掲載されているかも</p>
-        </div>
-
-        <div class="int_bottom">
-          <div class="int-img_wrapp">
-            <div class="int-blog_btn">
-              <p><a href="#">ブログを見に行く</a></p>
-            </div>
+        <div class="blog_wrapp">
+          <h3>blog</h3>
+          <div class="blog_page">
+            <img src="../img/blog_page.png" alt="ブログの画像">
+          </div>
+          <div class="int2_text">
+            <p>neighbor-foodに登録しているお店のブログが読める<br><br>
+              中にはここだけのお得な情報があるかも</p>
           </div>
         </div>
+
+        <!-- <div class="int-blog_btn">
+          <p><a href="#">ブログを見に行く</a></p>
+        </div> -->
+
 
       </div>
 

@@ -17,7 +17,7 @@
 <body>
 
 
-  <?php require("../shared/_header.php") ?>
+  <?php require("../shared/_header.php"); ?>
 
   <div class="new_wrapp">
 

@@ -1,11 +1,11 @@
 <div class="shared_header">
 
-  <div class="header_title">
+  <div class="shared_header-title">
     <p><a href="/my_app/views/index.php">neighbor - <span>Food</span></a></p>
 
   </div>
 
-  <div class="header_nav">
+  <div class="shared_header-nav">
     <li>
       <ul>
         <a href="#">a</a>
@@ -21,4 +21,4 @@
 
 </div>
 
-<div class="content_wrapp">
+<div class="shared_content-wrapp">

@@ -23,7 +23,7 @@
       <div class="store_nav">
         <ul>
           <li>
-            ホーム
+            <a href="index.php">ホーム</a>
           </li>
           <li>
             プロフィール

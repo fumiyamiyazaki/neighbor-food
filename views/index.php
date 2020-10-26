@@ -8,23 +8,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/jquery-css-transform.js"></script>
 <script type="text/javascript" src="../js/rotate3Di.js"></script>
 <script>
   $(function() {
-    hover();
     spin();
-    btn_man();
+    scrollTop();
   });
 
-  function hover() {
-    $(".store-img_front").hover(function() {
-      $(this).css("display", "none");
-      $(".store-img_back").fadeIn(2000);
-    });
-  }
 
   function spin() {
     $('#card').hover(
@@ -41,21 +35,17 @@
     );
   }
 
-  function btn_man() {
-    $(".step_btn").hover(function() {
-      $(".btn_man1").css("display", "flex");
-    });
-    $(".int-blog_btn").hover(function() {
-      $(".btn_man2").css("display", "flex").animate({"right":"-20vw"},1000, function() {
-        $(".btn_man2").fadeOut(2000);
-      });
-    });
-    $(".int-store_btn").hover(function() {
-      $(".btn_man3").css("display", "flex").animate({"right":"10vw"},1000, function() {
-        $(".btn_man3").fadeOut(2000);
-      });
+  function scrollTop() {
+    $('a[href^=#]').click(function(){
+      var speed = 500;
+      var href = $(this).attr('href');
+      var target = $(href == '#' || href == '' ? 'html':href);
+      var position = target.offset().top;
+      $('body,html').animate({scrollTop:position},speed,'swing')
+      return false;
     });
   }
+
 </script>
 </head>
 <body>
@@ -64,7 +54,7 @@
 
 
   <section>
-  <div class="main_content">
+  <div class="main_content" id="top_page">
 
     <div class="main_left">
       <h1>neighbor - <span>Food</span></h1>
@@ -171,7 +161,7 @@
       </div>
 
       <div class="step_btn">
-        <p><a href="registrations/new.php">会員登録する</a></p>
+        <p><a href="registrations/new.php">← 会員登録</a></p>
       </div>
 
       <div class="int2_wrapp">
@@ -179,18 +169,17 @@
         <div class="blog_wrapp">
           <h3>blog</h3>
           <div class="blog_page">
-            <img src="../img/blog_page.png" alt="ブログの画像">
+            <img src="../img/blogs.png" alt="ブログの画像">
           </div>
           <div class="int2_text">
-            <p>neighbor-foodに登録しているお店のブログが読める<br><br>
-              中にはここだけのお得な情報があるかも</p>
+            <p>neighbor-foodに登録しているお店のブログが閲覧できます。<br><br>
+              中にはここだけの、お得な情報があるかも</p>
           </div>
         </div>
 
-        <!-- <div class="int-blog_btn">
-          <p><a href="#">ブログを見に行く</a></p>
-        </div> -->
-
+        <div class="int-blog_btn">
+          <p><a href="#">blog →</a></p>
+        </div>
 
       </div>
 
@@ -199,8 +188,23 @@
   </section>
 
   <section>
+    <div class="bottom_cont-wrapp">
+
+      <div class="bottom_cont-left">
+      </div>
+      <div class="bottom_cont-right">
+      </div>
+      <a href="#top_page"><h2 class="top_scr">neighbor - <span>Food</span></h2></a>
+
+    </div>
+    <div class="bottom_img-table"></div>
 
   </section>
+
+  <?php require("shared/_footer.php") ?>
+
+
+
 
 
 

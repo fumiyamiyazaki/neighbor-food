@@ -178,7 +178,7 @@
         </div>
 
         <div class="int-blog_btn">
-          <p><a href="#">blog →</a></p>
+          <p><a href="search_blog.php">blog →</a></p>
         </div>
 
       </div>

@@ -70,6 +70,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 100px 50px;
+  position: relative;
 }
 .blog_content {
   height:40vh;
@@ -81,7 +82,11 @@
 .blog_img-wrapp {
   height: 30vh;
   width: 25vw;
-  border: 1px solid black;
+}
+.blog_img-pict {
+  height: 100%;
+  width: 100%;
+  /* border-radius: 15px; */
 }
 .blog_info-wrapp {
   display: flex;
@@ -100,4 +105,21 @@
 .sentence_blog {
   font-size: 1.1vw;
   color: #b8b8b8	;
+}
+.scroll_top-btn {
+  height: 10vh;
+  width: 6vw;
+  text-align: center;
+  line-height: 11vh;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 2vh;
+  right: 5vw;
+  z-index: 5;
+  position: fixed;
+  background-color: #FF4F50;
+}
+.top_btn {
+  font-size: 2rem;
+  color: #fff;
 }

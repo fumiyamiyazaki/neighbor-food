@@ -53,129 +53,119 @@ $(function() {
 
     <div class="blog_content-wrapp">
 
-      <!-- for分で回す -->
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
+      <div class="side_nav">
+        <ul>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
-      <!--  -->
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
-      <div class="blog_content">
-        <div class="blog_img-wrapp">
-          <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
-        </div>
-        <div class="blog_info-wrapp">
-          <p class="store_name-blog">aaaaa</p>
-          <p class="created_blog">2020-10-27</p>
-        </div>
-        <!-- 21文字まで -->
-        <p class="sentence_blog">あああああああああああああああああああああ...</p>
-      </div>
+
+      <ul class="blog_wrapp">
+        <!-- for文で回す -->
+        <li class="blog_content">
+          <a href="#">
+            <div class="blog_img-wrapp">
+              <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
+            </div>
+            <div class="blog_info-wrapp">
+              <p class="store_name-blog">aaaa</p>
+              <p class="created_blog">2020-10-29</p>
+            </div>
+            <div class="sentence_wrapp">
+              <p class="sentence_blog">濃厚スープのラーメン</p>
+            </div>
+          </a>
+        </li>
+        <!--  -->
+        <li class="blog_content">
+          <a href="#">
+            <div class="blog_img-wrapp">
+              <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
+            </div>
+            <div class="blog_info-wrapp">
+              <p class="store_name-blog">aaaa</p>
+              <p class="created_blog">2020-10-29</p>
+            </div>
+            <div class="sentence_wrapp">
+              <p class="sentence_blog">濃厚スープのラーメン</p>
+            </div>
+          </a>
+        </li>
+        <li class="blog_content">
+          <a href="#">
+            <div class="blog_img-wrapp">
+              <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
+            </div>
+            <div class="blog_info-wrapp">
+              <p class="store_name-blog">aaaa</p>
+              <p class="created_blog">2020-10-29</p>
+            </div>
+            <div class="sentence_wrapp">
+              <p class="sentence_blog">濃厚スープのラーメン</p>
+            </div>
+          </a>
+        </li>
+        <li class="blog_content">
+          <a href="#">
+            <div class="blog_img-wrapp">
+              <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
+            </div>
+            <div class="blog_info-wrapp">
+              <p class="store_name-blog">aaaa</p>
+              <p class="created_blog">2020-10-29</p>
+            </div>
+            <div class="sentence_wrapp">
+              <p class="sentence_blog">濃厚スープのラーメン</p>
+            </div>
+          </a>
+        </li>
+        <li class="blog_content">
+          <a href="#">
+            <div class="blog_img-wrapp">
+              <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
+            </div>
+            <div class="blog_info-wrapp">
+              <p class="store_name-blog">aaaa</p>
+              <p class="created_blog">2020-10-29</p>
+            </div>
+            <div class="sentence_wrapp">
+              <p class="sentence_blog">濃厚スープのラーメン</p>
+            </div>
+          </a>
+        </li>
+        <li class="blog_content">
+          <a href="#">
+            <div class="blog_img-wrapp">
+              <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
+            </div>
+            <div class="blog_info-wrapp">
+              <p class="store_name-blog">aaaa</p>
+              <p class="created_blog">2020-10-29</p>
+            </div>
+            <div class="sentence_wrapp">
+              <p class="sentence_blog">濃厚スープのラーメン</p>
+            </div>
+          </a>
+        </li>
+        <li class="blog_content">
+          <a href="#">
+            <div class="blog_img-wrapp">
+              <img src="../img/main.jpg" class="blog_img-pict" alt="ブログの写真">
+            </div>
+            <div class="blog_info-wrapp">
+              <p class="store_name-blog">aaaa</p>
+              <p class="created_blog">2020-10-29</p>
+            </div>
+            <div class="sentence_wrapp">
+              <p class="sentence_blog">濃厚スープのラーメン</p>
+            </div>
+          </a>
+        </li>
+
+
+
+      </ul>
+
 
 
       <div class="scroll_top-btn">

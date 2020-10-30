@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script type="text/javascript" src="../js/jquery-css-transform.js"></script>
 <script type="text/javascript" src="../js/rotate3Di.js"></script>
@@ -52,6 +53,7 @@
 
 
 
+  <?php require("shared/_header.php"); ?>
 
   <section>
   <div class="main_content" id="top_page">
@@ -65,11 +67,6 @@
 
     <div class="main_right">
       <img src="../img/main.jpg" alt="メインの画像" class="right_img">
-      <div class="regist_link">
-        <p><a href="registrations/new.php">新規登録</a></p>
-        /
-        <p><a href="registrations/login.php">ログイン</a></p>
-      </div>
     </div>
 
   </div>
@@ -185,21 +182,16 @@
 
     </div>
   </div>
+
+  <div class="bottom_img-table"></div>
   </section>
 
-  <section>
-    <div class="bottom_cont-wrapp">
+  <div class="index_top-btn">
+    <a href="#top_page"><i class="fas fa-arrow-up top_btn"></i></a>
+  </div>
 
-      <div class="bottom_cont-left">
-      </div>
-      <div class="bottom_cont-right">
-      </div>
-      <a href="#top_page"><h2 class="top_scr">neighbor - <span>Food</span></h2></a>
 
-    </div>
-    <div class="bottom_img-table"></div>
 
-  </section>
 
   <?php require("shared/_footer.php") ?>
 

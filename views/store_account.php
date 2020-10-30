@@ -9,12 +9,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
+<link rel="stylesheet" type="text/css" href="../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../css/store_account.css">
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script>
 </script>
 </head>
 <body>
+
+  <?php require("shared/_header.php"); ?>
 
   <div class="store_account-wrapp">
 
@@ -88,9 +91,9 @@
 
     </div>
 
-
-
   </div>
+
+  <?php require("shared/_footer.php") ?>
 
 
 

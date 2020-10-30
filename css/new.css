@@ -1,6 +1,13 @@
 @charset "UTF-8";
 
-
+.new_content-wrapp {
+  background-color: #fafafa;
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .new_wrapp {
   width: 70%;
   height: 60%;

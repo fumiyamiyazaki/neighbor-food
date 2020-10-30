@@ -36,6 +36,8 @@ $(function() {
 </head>
 <body>
 
+  <?php require("shared/_header.php"); ?>
+
   <div class="search_wrapp">
 
     <div class="search_header" id="top_page">
@@ -52,13 +54,6 @@ $(function() {
     </div>
 
     <div class="blog_content-wrapp">
-
-      <div class="side_nav">
-        <ul>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
 
       <ul class="blog_wrapp">
         <!-- for文で回す -->
@@ -87,7 +82,7 @@ $(function() {
               <p class="created_blog">2020-10-29</p>
             </div>
             <div class="sentence_wrapp">
-              <p class="sentence_blog">濃厚スープのラーメン</p>
+              <p class="sentence_blog">ラーメンラーメンラーメンラーメンラーメンラーメンラーメンラーメンラーメンラーメンラーメンラーメンラーメンラーメン</p>
             </div>
           </a>
         </li>

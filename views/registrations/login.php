@@ -16,7 +16,9 @@
 </head>
 <body>
 
-  <?php require("../shared/_header.php"); ?>
+  <?php require("../shared/_regist_header.php"); ?>
+
+  <div class="login_content-wrapp">
 
     <div class="login_wrapp">
 
@@ -48,7 +50,12 @@
       </div>
 
     </div>
-    <!-- <p><a href="new.php">新規登録</a></p> -->
+  </div>
+
+  <?php require("../shared/_footer.php"); ?>
+
+
+
 
 
 </body>

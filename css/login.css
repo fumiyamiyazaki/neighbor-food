@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+.login_content-wrapp {
+  background-color: #fafafa;
+  width: 100%;
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .login_wrapp {
   width: 70%;
   height: 60%;

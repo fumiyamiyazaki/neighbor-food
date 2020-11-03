@@ -173,12 +173,41 @@
   width: 90vw;
   margin: 0 auto;
   padding: 0 20px;
+  position: relative;
 }
 .second_img img {
   height: 100%;
   width: 100%;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+  position: absolute;
+  z-index: 1;
 }
+.second_search {
+}
+.second_search-box {
+  height: 100px;
+  width: 350px;
+  text-align: center;
+  line-height: 100px;
+  position: relative;
+  top: 54vh;
+  left: 40%;
+  /* transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%); */
+  z-index: 2;
+  transition: all .5s linear 0s;
+  background-color: #111111;
+}
+.second_search-box:hover {
+  transform: rotateX(360deg);
+  background-color: #FF4F50;
+}
+.second_search-box span {
+  font-size: 1.3vw;
+  letter-spacing: .5rem;
+  color: #ffff;
+}
+
 
 /* third_wrapp */
 .third_wrapp {

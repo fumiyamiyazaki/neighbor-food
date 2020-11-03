@@ -62,7 +62,7 @@
       <h1>neighbor - <span>Food</span></h1>
       <h2 class="about_p">今すぐ行けるラーメン屋を探せる</h2>
       <h3 class="about_text">即行けラーメン検索プラットフォーム</h3>
-      <div class="near_btn"><a href="#">近くのお店</a></div>
+      <!-- <div class="near_btn"><a href="#">近くのお店</a></div> -->
     </div>
 
     <div class="main_right">
@@ -104,6 +104,12 @@
       <div class="second_wrapp">
         <div class="second_img">
           <img src="../img/map.png" alt="地図の画像">
+          <a href="#" class="second_search">
+            <div class="second_search-box">
+              <span>search</span>
+              <span><i class="fas fa-search"></i></span>
+            </div>
+          </a>
         </div>
       </div>
 

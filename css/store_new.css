@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.new_content-wrapp {
+.store_new_content-wrapp {
   background-color: #fafafa;
   width: 100%;
   /* height: calc(100vh - 70px); */
@@ -9,26 +9,26 @@
   align-items: center;
   padding: 100px 0;
 }
-.new_wrapp {
+.store_new_wrapp {
   width: 70%;
   height: 60%;
   background-color: #fff;
 }
 
-.new_top {
+.store_new_top {
   width: 100%;
   height: 20%;
   background-color: #fff;
   border-bottom: 3px solid #f7f7f7;
 }
-.new_top p {
+.store_new_top p {
   text-align: center;
   line-height: 90px;
   font-size: 20px;
   font-weight: bold;
 }
 
-.new_bottom {
+.store_new_bottom {
   width: 100%;
   height: 100%;
   background-color: #fff;
@@ -37,27 +37,27 @@
   align-items: center;
   padding: 50px 50px;
 }
-.new_form {
+.store_new_form {
   width: 100%;
 }
-.new_form div {
+.store_new_form div {
   margin-bottom: 30px;
 }
-.new_form label {
+.store_new_form label {
   display: block;
   margin-bottom: 10px;
 }
-.new_form input {
+.store_new_form input {
   width: 100%;
   height: 2rem;
   display: block;
   border: 3px solid #f7f7f7;
   outline: none;
 }
-.new_form input:focus {
+.store_new_form input:focus {
   border-color: #dfdfdf;
 }
-.new_form button {
+.store_new_form button {
   width: 100%;
   height: 3rem;
   border-radius: 15px;
@@ -74,31 +74,31 @@
 
 /* レスポンシブ */
 @media screen and (max-width: 959px) {
-  .content_wrapp {
+  .store_new_content-wrapp {
 
   }
-  .new_wrapp {
+  .store_new_wrapp {
     width: 90%;
     height: 70%;
   }
-  .new_top {
+  .store_new_top {
     height: 15%;
   }
-  .new_top p {
+  .store_new_top p {
     line-height: 10vh;
     font-size: 4vw;
   }
-  .new_bottom {
+  .store_new_bottom {
     padding: 0 20px;
     height: 85%;
   }
-  .new_form label {
+  .store_new_form label {
     font-size: 20px;
   }
-  .new_form input {
+  .store_new_form input {
     height: 5vh;
   }
-  .new_form button {
+  .store_new_form button {
     height: 6vh;
     font-size: 3vw;
   }
@@ -109,7 +109,7 @@
 }
 
 @media screen and (max-width: 559px) {
-  .content_wrapp {
+  .store_new_content-wrapp {
     height: calc(100vh - 60px);
     background-color: #fff;
   }
@@ -127,21 +127,21 @@
     font-size: 15px;
   }
 
-  .new_wrapp {
+  .store_new_wrapp {
     width: 100%;
     height: 100%;
     margin-top: 0;
   }
-  .new_top {
+  .store_new_top {
     height: 10%;
   }
-  .new_top p {
+  .store_new_top p {
     line-height: 10vh;
   }
-  .new_bottom {
+  .store_new_bottom {
     height: 90%;
   }
-  .new_form label {
+  .store_new_form label {
     font-size: 16px;
   }
 

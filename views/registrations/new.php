@@ -22,8 +22,16 @@
   <div class="new_content-wrapp">
 
     <div class="new_wrapp">
+
       <div class="new_top">
-        <p>新規登録</p>
+        <ul>
+          <li>
+            <p>新規登録</p>
+          </li>
+          <li>
+            <a href="login.php">ログイン</a>
+          </li>
+        </ul>
       </div>
 
       <div class="new_bottom">
@@ -55,6 +63,11 @@
         </form>
       </div>
     </div>
+
+    <div class="store_link-new">
+      <p>店舗として登録は<a href="store_new.php">こちら</a></p>
+    </div>
+
 
   </div>
 

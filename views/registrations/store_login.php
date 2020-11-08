@@ -25,7 +25,14 @@
     <div class="store_login_wrapp">
 
       <div class="store_login_top">
-        <p>店舗ログイン</p>
+        <ul>
+          <li>
+            <a href="store_new.php">店舗登録</a>
+          </li>
+          <li>
+            <p>店舗ログイン</p>
+          </li>
+        </ul>
       </div>
 
       <div class="store_login_bottom">
@@ -52,6 +59,12 @@
       </div>
 
     </div>
+
+    <div class="user_link-login">
+      <p>一般ユーザーとして登録は<a href="new.php">こちら</a></p>
+    </div>
+
+
   </div>
 
   <?php require("../shared/_footer.php"); ?>

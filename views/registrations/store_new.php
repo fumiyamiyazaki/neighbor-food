@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../../css/store_new.css">
 <script type="text/javascript" src="../../js/jquery.js"></script>
+<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
 <script>
 </script>
 </head>
@@ -48,14 +49,14 @@
             <label for="postal_code">
               郵便番号
             </label>
-            <input type="text" name="postal_code" placeholder="1234567">
+            <input type="text" name="zip11" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" placeholder="1234567">
           </div>
 
           <div>
             <label for="address">
               都道府県・市区町村・番地
             </label>
-            <input type="text" name="address">
+            <input type="text" name="addr11">
           </div>
 
           <div>

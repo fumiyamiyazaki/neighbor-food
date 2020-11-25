@@ -106,12 +106,12 @@
           <img src="../img/map.png" alt="地図の画像">
           <a href="#" class="second_search">
             <div class="second_search-box">
-              <span>search</span>
-              <span><i class="fas fa-search"></i></span>
+              <span><a href="search_store.php">search<i class="fas fa-search"></i></a></span>
             </div>
           </a>
         </div>
       </div>
+
 
       <!-- third -->
       <div class="third_wrapp">

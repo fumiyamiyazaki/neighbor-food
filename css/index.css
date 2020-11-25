@@ -202,9 +202,13 @@
   transform: rotateX(360deg);
   background-color: #FF4F50;
 }
-.second_search-box span {
+.second_search-box a {
+  color: #ffff;
   font-size: 1.3vw;
   letter-spacing: .5rem;
+}
+.second_search-box span {
+  font-size: 1.3vw;
   color: #ffff;
 }
 

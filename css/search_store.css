@@ -1,0 +1,109 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+.search_flame-wrapp {
+  height: 100%;
+  width: 100%;
+  background-color: #FF4F50;
+}
+
+
+.search_store-wrapp {
+  height: 100vh;
+  width: 100%;
+  margin: 20px 0;
+}
+
+
+.search_map-wrapp {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: #fafafa;
+}
+
+#maps {
+  height: 100vh;
+  width: 70%;
+}
+#right_panel {
+  height: 100vh;
+  width: 30%;
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  /* background-color: #ffff; */
+  /* padding-left: 10px; */
+}
+
+/* #right-panel {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  right: 5px;
+  top: 60%;
+  margin-top: -195px;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  z-index: 5;
+  border: 1px solid #999;
+  background: #fff;
+} */
+
+
+#right_panel h2 {
+  /* width: 110px; */
+  font-size: 20px;
+  position: relative;
+  margin: 20px 0 5px 10px;
+  font-family: serif;
+  /* border-bottom: 1px solid #FF4F50; */
+}
+#right_panel h2::after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 165px;
+  height: 2px;
+  background: #FF4F50;
+}
+
+#right_panel ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 90%;
+  width: 100%;
+  overflow-y: scroll;
+}
+
+#right_panel li {
+  padding: 30px 10px;
+  /* text-overflow: ellipsis; */
+  white-space: nowrap;
+  overflow: scroll;
+  margin: 20px 10px;
+  box-shadow: 3px 3px 3px #5555;
+  background-color: #ffff;
+}
+
+#right_panel li:nth-child(odd) {
+  /* background-color: #fcfcfc; */
+}
+
+.place_vicinity {
+  font-size: 15px;
+  color: #909090;
+}
+
+.shoplist_wrapp {
+  display: flex;
+}
+
+.place_photos {
+  height: 110px;
+  width: 120px;
+  margin-right: 30px;
+}

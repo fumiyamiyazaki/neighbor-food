@@ -1,3 +1,31 @@
+<?php
+
+session_start();
+
+require_once ("../../config/config.php");
+require_once ("../../model/Store.php");
+
+try {
+  $store = new Store($host, $dbname, $user, $pass);
+  $store->connectdb();
+
+  if($_POST) {
+    $message = $store->new_validateStore($_POST);
+    if(empty($message['name']) && empty($message['postal_code']) && empty($message['addr11']) && empty($message['building_name']) && empty($message['email']) && empty($message['password'])) {
+      $result = $store->addStore($_POST);
+      $_SESSION['Store'] = $result;
+      header('location: ../index.php');
+      exit;
+    }
+  }
+}catch(PDOException $e) {
+  echo 'データベース接続失敗'.$e->getMessage();
+}
+// print_r($_SESSION['Store']);
+
+ ?>
+
+
 
 
 <!DOCTYPE html>
@@ -10,7 +38,7 @@
 <link rel="stylesheet" type="text/css" href="../../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../../css/store_new.css">
 <script type="text/javascript" src="../../js/jquery.js"></script>
-<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
+<!-- <script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script> -->
 <script>
 </script>
 </head>
@@ -36,27 +64,30 @@
 
       <div class="store_new_bottom">
         <!-- ログインフォーム -->
-        <form class="store_new_form" action="" method="post">
+        <form class="store_new_form" name="form" action="" method="post">
 
           <div>
-            <label for="user_name">
+            <label for="store_name">
               店舗名
             </label>
-            <input type="text" name="user_name" placeholder="例） 麺太郎">
+            <input type="text" name="name" placeholder="例） 麺屋">
+            <?php if(isset($message['name'])) echo "<p clas='error'>".$message['name']."</p>" ?>
           </div>
 
           <div>
             <label for="postal_code">
               郵便番号
             </label>
-            <input type="text" name="zip11" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" placeholder="1234567">
+            <input type="text" name="postal_code" onKeyUp="AjaxZip3.zip2addr(this,'','addr11','addr11');" placeholder="1234567">
+            <?php if(isset($message['postal_code'])) echo "<p clas='error'>".$message['postal_code']."</p>" ?>
           </div>
 
           <div>
             <label for="address">
               都道府県・市区町村・番地
             </label>
-            <input type="text" name="addr11">
+            <input type="text" name="address">
+            <?php if(isset($message['address'])) echo "<p clas='error'>".$message['address']."</p>" ?>
           </div>
 
           <div>
@@ -64,13 +95,15 @@
               建物名・号室
             </label>
             <input type="text" name="building_name">
+            <?php if(isset($message['building_name'])) echo "<p clas='error'>".$message['building_name']."</p>" ?>
           </div>
 
           <div>
-            <label for="new_id">
+            <label for="email">
               ユーザーID<span>(メールアドレス)</span>
             </label>
-            <input type="text" name="new_id" placeholder="例） neighbor@food.jp">
+            <input type="text" name="email" placeholder="例） neighbor@food.jp">
+            <?php if(isset($message['email'])) echo "<p clas='error'>".$message['email']."</p>" ?>
           </div>
 
           <div>
@@ -78,6 +111,7 @@
               パスワード
             </label>
             <input type="text" name="password" placeholder="半角英数字を含めた4文字以上">
+            <?php if(isset($message['password'])) echo "<p clas='error'>".$message['password']."</p>" ?>
           </div>
 
           <button type="submit" class="new_btn">ログインする</button>

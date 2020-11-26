@@ -13,7 +13,7 @@
   height: 100vh;
   width: 70%;
   margin: 0 auto;
-  padding-top: 15px;
+  padding-top: 50px;
   overflow: scroll;
   background-color: #ffff;
 }
@@ -41,7 +41,7 @@
 .fav_stores {
   height: 100vh;
   width: 100%;
-  margin-top: 70px;
+  margin-top: 50px;
   padding-top: 50px;
   border-top: 1px solid #FF4F50;
 }
@@ -55,11 +55,41 @@
 .fav_s-flame {
   height: 120px;
   width: 600px;
+  position: relative;
   border-radius: 20px;
   margin-bottom: 50px;
+  padding-left: 30px;
   border: 1px solid #e5e1e1;
 }
 
 .fav_s {
-
+  display: flex;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.fav_s-img {
+  height: 100px;
+  width: 100px;
+  margin-right: 50px;
+  border-radius: 50px;
+  border: 1px solid #909090;
+}
+.fav_s-img img {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #909090;
+  border-radius: 50px;
+}
+.fav_s-name {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  margin-top: 20px;
+  color: #909090;
+}
+.fav_s-name span {
+  font-size: 1.3rem;
+  font-family: serif;
+  font-weight: bold;
+  color: #111111;
 }

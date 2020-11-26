@@ -1,4 +1,25 @@
+<?php
 
+session_start();
+
+require_once ("../config/config.php");
+require_once ("../model/Store.php");
+
+try {
+  $store = new Store($host, $dbname, $user, $pass);
+  $store->connectdb();
+
+  if(isset($_SESSION['Store'])) {
+    $store_id = $_SESSION['Store']['id'];
+    $result['Store'] = $store->findByStoreId($store_id);
+  }
+
+}catch(PDOException $e) {
+  echo 'データベース接続失敗'.$e->getMessage();
+}
+
+ ?>
+ 
 
 
 
@@ -56,8 +77,8 @@
       <div class="store_sub-cont">
 
         <div class="store_profile">
-          <p class="store_name">銀水</p>
-          <p class="store_locate">滋賀県草津市田上23-22</p>
+          <p class="store_name"><?php echo $result['Store']['name']; ?></p>
+          <p class="store_locate"><?php echo $result['Store']['address'].$result['Store']['building_name'] ?></p>
         </div>
 
         <div class="fav_icon">

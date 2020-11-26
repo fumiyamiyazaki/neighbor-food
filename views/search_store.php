@@ -1,4 +1,13 @@
+<?php
+session_start();
 
+// ログイン画面を経由したかを判定
+if(!isset($_SESSION['User']) && !isset($_SESSION['Store'])) {
+  header('location: index.php');
+  exit;
+}
+
+ ?>
 
 
 

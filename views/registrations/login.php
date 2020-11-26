@@ -1,4 +1,33 @@
+<?php
 
+session_start();
+
+require_once ("../../config/config.php");
+require_once ("../../model/User.php");
+
+try {
+  $user = new User($host, $dbname, $user, $pass);
+  $user->connectdb();
+
+  if($_POST) {
+    $message = $user->login_validate($_POST);
+    if(empty($message['email']) && empty($message['password'])) {
+      $result = $user->loginUser($_POST);
+      $_SESSION['User'] = $result;
+      if(!empty($_SESSION['User'])) {
+        header('location: ../index.php');
+        exit;
+      }
+    }
+  }
+}catch(PDOException $e) {
+  echo 'データベース接続失敗'.$e->getMessage();
+}
+
+
+
+
+ ?>
 
 
 <!DOCTYPE html>
@@ -35,13 +64,14 @@
 
       <div class="login_bottom">
         <!-- ログインフォーム -->
-        <form class="login_form" action="" method="post">
+        <form class="login_form" name="form" action="" method="post">
 
           <div>
             <label for="login_id">
               ユーザーID<span>(メールアドレス)</span>
             </label>
-            <input type="text" name="login_id" placeholder="例） neighbor@food.jp">
+            <input type="text" name="email" placeholder="例） neighbor@food.jp">
+            <?php if(isset($message['email'])) echo "<p class='error'>".$message['email']."</p>" ?>
           </div>
 
           <div>
@@ -49,11 +79,12 @@
               パスワード
             </label>
             <input type="text" name="password" placeholder="半角英数字を含めた4文字以上">
+            <?php if(isset($message['password'])) echo "<p class='error'>".$message['password']."</p>" ?>
           </div>
 
           <button type="submit" class="login_btn">ログインする</button>
         </form>
-
+        <!-- /フォーム -->
       </div>
 
     </div>

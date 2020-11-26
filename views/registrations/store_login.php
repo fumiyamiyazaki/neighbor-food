@@ -1,4 +1,31 @@
+<?php
 
+session_start();
+
+require_once ("../../config/config.php");
+require_once ("../../model/Store.php");
+
+try {
+  $store = new Store($host, $dbname, $user, $pass);
+  $store->connectdb();
+
+  if($_POST) {
+    $message = $store->login_validateStore($_POST);
+    if(empty($message['email']) && empty($message['password'])) {
+      $result = $store->loginStore($_POST);
+      $_SESSION['Store'] = $result;
+      if(!empty($_SESSION['Store'])) {
+        header('location: ../index.php');
+        exit;
+      }
+    }
+  }
+
+}catch(PDOException $e) {
+  echo 'データベース接続失敗'.$e->getMessage();
+}
+
+ ?>
 
 
 
@@ -40,10 +67,10 @@
         <form class="store_login_form" action="" method="post">
 
           <div>
-            <label for="login_id">
+            <label for="email">
               店舗ID<span>(メールアドレス)</span>
             </label>
-            <input type="text" name="login_id" placeholder="例） neighbor@food.jp">
+            <input type="text" name="email" placeholder="例） neighbor@food.jp">
           </div>
 
           <div>

@@ -1,4 +1,8 @@
+<?php
 
+session_start();
+
+ ?>
 
 
 <!DOCTYPE html>
@@ -50,7 +54,6 @@
 </script>
 </head>
 <body>
-
 
 
   <?php require("shared/_header.php"); ?>

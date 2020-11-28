@@ -12,7 +12,8 @@ try {
   if($_POST) {
     $message = $store->new_validateStore($_POST);
     if(empty($message['name']) && empty($message['postal_code']) && empty($message['addr11']) && empty($message['building_name']) && empty($message['email']) && empty($message['password'])) {
-      $result = $store->addStore($_POST);
+      $store->addStore($_POST);
+      $result = $store->lastInsertStoreId();
       $_SESSION['Store'] = $result;
       header('location: ../index.php');
       exit;

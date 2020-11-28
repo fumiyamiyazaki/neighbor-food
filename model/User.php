@@ -39,7 +39,8 @@ class User extends DB {
     return $result;
   }
 
-  public function lastInsertId() {
+  // サインアップしたユーザーの情報を格納
+  public function lastInsertUserId() {
     $lastId = $this->connect->lastInsertId();
     $sql = "SELECT * FROM users WHERE id = :id";
     $stmt = $this->connect->prepare($sql);

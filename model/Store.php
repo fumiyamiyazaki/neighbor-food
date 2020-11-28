@@ -43,6 +43,17 @@ class Store extends DB {
     return $result;
   }
 
+  // サインアップしたユーザーの情報を格納
+  public function lastInsertStoreId() {
+    $lastId = $this->connect->lastInsertId();
+    $sql = "SELECT * FROM stores WHERE id = :id";
+    $stmt = $this->connect->prepare($sql);
+    $params = array(":id"=>$lastId);
+    $stmt->execute($params);
+    $result = $stmt->fetch();
+    return $result;
+  }
+
 
 
   // バリデーション

@@ -12,11 +12,13 @@ try {
   if($_POST) {
     $message = $user->new_validate($_POST);
     if(empty($message['name']) && empty($message['email']) && empty($message['password'])) {
-      $result = $user->addUser($_POST);
-      echo "registration";
+      $user->addUser($_POST);
+      $result = $user->lastInsertId();
       $_SESSION['User'] = $result;
-      header('location: ../index.php');
-      exit;
+      if(isset($_SESSION['User'])) {
+        header('location: ../index.php');
+        exit;
+      }
     }
   }
 

@@ -53,7 +53,7 @@ if(isset($_GET['logout'])) {
             <a href="?logout=1">logout</a>
           <?php endif; ?>
         </li>
-        
+
       <?php if(!isset($_SESSION['User']) && !isset($_SESSION['Store'])): ?>
         <li class="shared_li-before">
           <a href="/my_app/views/registrations/new.php">sign-in</a>

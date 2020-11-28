@@ -39,6 +39,16 @@ class User extends DB {
     return $result;
   }
 
+  public function lastInsertId() {
+    $lastId = $this->connect->lastInsertId();
+    $sql = "SELECT * FROM users WHERE id = :id";
+    $stmt = $this->connect->prepare($sql);
+    $params = array(":id"=>$lastId);
+    $stmt->execute($params);
+    $result = $stmt->fetch();
+    return $result;
+  }
+
 
 
   // バリデーション

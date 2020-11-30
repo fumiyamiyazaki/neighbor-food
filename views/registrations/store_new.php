@@ -15,8 +15,10 @@ try {
       $store->addStore($_POST);
       $result = $store->lastInsertStoreId();
       $_SESSION['Store'] = $result;
-      header('location: ../index.php');
-      exit;
+      if(!empty($_SESSION['Store'])) {
+        header('location: ../index.php');
+        exit;
+      }
     }
   }
 }catch(PDOException $e) {

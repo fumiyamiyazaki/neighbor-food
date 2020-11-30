@@ -13,16 +13,14 @@ try {
     $message = $user->new_validate($_POST);
     if(empty($message['name']) && empty($message['email']) && empty($message['password'])) {
       $user->addUser($_POST);
-      $result = $user->lastInsertId();
+      $result = $user->lastInsertUserId();
       $_SESSION['User'] = $result;
-      if(isset($_SESSION['User'])) {
+      if(!empty($_SESSION['User'])) {
         header('location: ../index.php');
         exit;
       }
     }
   }
-
-
 }catch(PDOException $e) {
   echo 'データベース接続失敗'.$e->getMessage();
 }
@@ -68,7 +66,7 @@ try {
         <form class="new_form" name="form" action="" method="post">
 
           <div>
-            <label for="user_name">
+            <label for="name">
               氏名
             </label>
             <input type="text" name="name" placeholder="例） 麺太郎" value="<?php if(isset($result['User'])) echo $result['User']['name']; ?>">

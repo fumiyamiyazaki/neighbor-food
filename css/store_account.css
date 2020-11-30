@@ -35,7 +35,9 @@
   height: 400px;
   width: 100%;
   background-color: #ffff;
-  padding: 50px 250px;
+  padding: 20px 150px;
+  /* padding: 50px 250px; */
+
 }
 
 .pict_flame {
@@ -43,11 +45,25 @@
   width: 100%;
   border: 1px solid black;
   border-radius: 100px;
+  position: relative;
+}
+.fa-plus-circle {
+  font-size: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  color: #909090;
 }
 .pict_flame img {
   height: 100%;
   width: 100%;
   border-radius: 100px;
+  object-fit: fill;
+}
+#imgfile_input {
+  display: none;
 }
 
 .store_sub-cont {

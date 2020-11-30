@@ -9,17 +9,29 @@ try {
   $store = new Store($host, $dbname, $user, $pass);
   $store->connectdb();
 
+  // アカウント画像を登録
+  if($_FILES && isset($_SESSION['Store'])) {
+    $store_id = $_SESSION['Store']['id'];
+    $imgdir = '../store_image/';
+    $image = date('YmdHis') . $_FILES['img']['name'];
+    move_uploaded_file($_FILES['img']['tmp_name'], $imgdir . $image);
+    $store->insertImg($image, $store_id);
+    // $_SESSION['Store']['img'] = $image
+  }
+
   if(isset($_SESSION['Store'])) {
     $store_id = $_SESSION['Store']['id'];
     $result['Store'] = $store->findByStoreId($store_id);
   }
 
+
 }catch(PDOException $e) {
   echo 'データベース接続失敗'.$e->getMessage();
 }
 
+
  ?>
- 
+
 
 
 
@@ -32,6 +44,7 @@ try {
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../css/store_account.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script>
 </script>
@@ -70,7 +83,26 @@ try {
 
       <div class="store_main-pict">
         <div class="pict_flame">
-          <img src="../img/main.jpg" alt="">
+
+          <?php if(empty($result['Store']['image'])): ?>
+            <form class="store_img-form" action="" enctype="multipart/form-data" method="post">
+
+              <div class="store_imgup">
+                <label for="imgfile_input">
+                  <i class="fas fa-plus-circle"></i>
+                </label>
+                <input type="file" name="img" accept="image/*" id="imgfile_input">
+              </div>
+
+              <input type="submit" value="送信">
+
+            </form>
+          <?php else: ?>
+            <?php $dir = "../store_image/"; ?>
+            <img src="<?php echo $dir.$result['Store']['image']; ?>" alt="お店の画像">
+          <?php endif; ?>
+
+
         </div>
       </div>
 

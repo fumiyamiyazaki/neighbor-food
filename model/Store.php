@@ -33,6 +33,19 @@ class Store extends DB {
     return $result;
   }
 
+  // アカウント画像の登録
+  public function insertImg($img, $id) {
+    $sql = "UPDATE stores SET image = :image WHERE id = :id";
+    $stmt = $this->connect->prepare($sql);
+    $params = array(
+      ':id'=>$id,
+      ':image'=>$img
+    );
+    $stmt->execute($params);
+    $result = $stmt->fetch();
+    return $result;
+  }
+
   // 参照（条件付き）
   public function findByStoreId($id) {
     $sql = "SELECT * FROM stores WHERE id = :id";
@@ -102,6 +115,19 @@ class Store extends DB {
       $message['password'] = "パスワードを入力してください。";
     }
     return $message;
+  }
+
+  public function img_balidate($arr) {
+    $message = arry();
+    $file_name = $arr['img']['name'];
+
+    if(!empty($file_name)) {
+      $ext = substr($file_name, -3);
+      if($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png') {
+        $message['img_name'] = ".jpg .jpeg .pngの画像を指定してください。";
+      }
+    }
+
   }
 
 

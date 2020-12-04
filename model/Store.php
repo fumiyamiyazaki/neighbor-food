@@ -4,7 +4,8 @@ require_once ("DB.php");
 
 class Store extends DB {
 
-  // ストアログイン
+
+  // // ストアログイン
   public function loginStore($arr) {
     $sql ="SELECT * FROM stores WHERE email = :email AND password = :password";
     $stmt = $this->connect->prepare($sql);
@@ -15,7 +16,7 @@ class Store extends DB {
   }
 
 
-  // 新規ストア登録
+  // // 新規ストア登録
   public function addStore($arr) {
     $sql = "INSERT INTO stores(name, postal_code, address, building_name, email, password, created_at) VALUES(:name, :postal_code, :address, :building_name, :email, :password, :created_at)";
     $stmt = $this->connect->prepare($sql);
@@ -32,6 +33,13 @@ class Store extends DB {
     $result = $stmt->fetch();
     return $result;
   }
+
+
+
+
+
+
+
 
   // アカウント画像の登録
   public function insertImg($img, $id) {
@@ -120,15 +128,22 @@ class Store extends DB {
   public function img_balidate($arr) {
     $message = arry();
     $file_name = $arr['img']['name'];
+    $file_size = $arr['img']['size'];
+    $allow_ext = array('jpg', 'jpeg', 'png');
+    $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
-    if(!empty($file_name)) {
-      $ext = substr($file_name, -3);
-      if($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png') {
-        $message['img_name'] = ".jpg .jpeg .pngの画像を指定してください。";
-      }
+    if(empty($file_name)) {
+      $message['img'] = "画像を指定してください。";
     }
 
+    if(!in_array(strtolower($file_ext), $allow_ext)) {
+      $message['img'] = "『jpg』『jpeg』『png』形式の画像を指定してください。";
+    }
   }
+
+
+
+
 
 
 }

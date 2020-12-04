@@ -11,12 +11,15 @@ try {
 
   // アカウント画像を登録
   if($_FILES && isset($_SESSION['Store'])) {
-    $store_id = $_SESSION['Store']['id'];
-    $imgdir = '../store_image/';
-    $image = date('YmdHis') . $_FILES['img']['name'];
-    move_uploaded_file($_FILES['img']['tmp_name'], $imgdir . $image);
-    $store->insertImg($image, $store_id);
-    // $_SESSION['Store']['img'] = $image
+    $message = $store->img_validate($_FILES);
+    if(empty($message['img'])) {
+      $store_id = $_SESSION['Store']['id'];
+      $imgdir = '../store_image/';
+      $image = date('YmdHis') . $_FILES['img']['name'];
+      move_uploaded_file($_FILES['img']['tmp_name'], $imgdir . $image);
+      $store->insertImg($image, $store_id);
+      // $_SESSION['Store']['img'] = $image
+    }
   }
 
   if(isset($_SESSION['Store'])) {
@@ -92,6 +95,7 @@ try {
                   <i class="fas fa-plus-circle"></i>
                 </label>
                 <input type="file" name="img" accept="image/*" id="imgfile_input">
+                <?php if(isset($message['img'])) echo "<p clas='error'>".$message['img']."</p>" ?>
               </div>
 
               <input type="submit" value="送信">

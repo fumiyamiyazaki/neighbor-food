@@ -1,11 +1,37 @@
 <?php
 session_start();
 
+require_once ("../config/config.php");
+require_once ("../model/History.php");
+
 // ログイン画面を経由したかを判定
 if(!isset($_SESSION['User']) && !isset($_SESSION['Store'])) {
   header('location: index.php');
   exit;
 }
+
+
+try {
+  $history = new History($host, $dbname, $user, $pass);
+  $history->connectdb();
+
+  if($_POST) {
+    $user_id = $_SESSION['User']['id'];
+    // 行ったお店を登録
+    $history->addHistory($_POST);
+    // 中間テーブルに格納
+    $history->addUserHisotry($user_id);
+  }
+
+
+
+
+}catch(PDOException $e) {
+  echo 'データベース接続失敗'.$e->getMessage();
+}
+
+
+
 
  ?>
 
@@ -22,7 +48,7 @@ if(!isset($_SESSION['User']) && !isset($_SESSION['Store'])) {
 <link rel="stylesheet" type="text/css" href="../css/search_store.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery.js"></script>
-<script src="//maps.googleapis.com/maps/api/js?key=&language=ja&libraries=drawing,geometry,places,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
+<script src="//maps.googleapis.com/maps/api/js?key=&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
 <script>
 </script>
 <script>
@@ -112,13 +138,22 @@ function initMap() {
 
           // 吹き出しの中身
           google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 'サイト：' + place.opening + '<br>' + '住所: ' + place.vicinity  + '</div>');
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 'サイト：'
+            + place.opening + '<br>' + '住所: ' + place.vicinity  + '</div>');
+
             infowindow.open(map, this);
           });
 
           var photos = place.photos;
           const li = document.createElement("li");
-          li.innerHTML = '<div class="shoplist_wrapp"><img class="place_photos" src=' + place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '><div class="shoplist_info"><strong>' + place.name + '</strong><br>' + '<span class="place_vicinity">' + place.vicinity + '</span></div></div>';
+          li.innerHTML = '<div class="shoplist_wrapp"><img class="place_photos" src='
+          + place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '><div class="shoplist_info"><strong>'
+          + place.name + '</strong><br>' + '<span class="place_vicinity">'
+          + place.vicinity + '</span><form action="" enctype="multipart/form-data" method="post"><input type="text" name="name" class="place_info-input" value="'
+          + place.name + '"><input type="text" name="vicinity" class="place_info-input" value="'
+          + place.vicinity + '"><input type="text" name="img" class="place_info-input" value="'
+          + place.photos[0].getUrl() + '"><input type="submit" class="place_info-submit" value="この店に行く"></form></div></div>';
+
           placeList.appendChild(li);
         }
 
@@ -181,6 +216,8 @@ function initMap() {
       </div>
 
     </div>
+
+
 
 
     <?php require("shared/_footer.php") ?>

@@ -107,3 +107,16 @@
   width: 120px;
   margin-right: 30px;
 }
+
+form .place_info-input {
+  display: none;
+}
+form .place_info-submit {
+  border: none;
+  outline: none;
+  color: #FF4F50;
+  background-color: #fafafa;
+}
+.place_id-submit:hover {
+  cursor: pointer;
+}

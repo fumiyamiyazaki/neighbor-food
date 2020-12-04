@@ -20,12 +20,14 @@ try {
   if(isset($_SESSION['User'])) {
     $user_id = $_SESSION['User']['id'];
     $result['user'] = $user->findById($user_id);
+    $history = $user->findHistory($user_id);
 
   }
 
 }catch(PDOException $e) {
   echo 'データベース接続失敗'.$e->getMessage();
 }
+
 
  ?>
 
@@ -62,21 +64,25 @@ try {
         <ul class="fav_s-wrapp">
 
           <!-- お気に入り店一覧 for文で回す -->
-          <li class="fav_s-flame">
-            <div class="fav_s">
+          <?php foreach($history as $row): ?>
+            <li class="fav_s-flame">
+              <p class="went_time"><?=$row['created_at']?></p>
+              <div class="fav_s">
 
-              <div class="fav_s-img">
-                <img src="../img/main.jpg" alt="お店の写真">
+                <div class="fav_s-img">
+                  <img src="../img/main.jpg" alt="お店の写真">
+                </div>
+
+                <div class="fav_s-info">
+                  <p class="fav_s-name"><span><?=$row['history_name']?></span><br><?=$row['vicinity']?></p>
+                </div>
+
+
               </div>
-
-              <div class="fav_s-info">
-                <p class="fav_s-name"><span>銀水</span><br>滋賀県湖南市御津町２１−２</p>
-              </div>
-
-            </div>
-          </li>
+            </li>
+          <?php endforeach; ?>
           <!--  -->
-          
+
 
 
 

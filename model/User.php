@@ -50,6 +50,24 @@ class User extends DB {
     return $result;
   }
 
+  // ストア履歴の参照
+  public function findHistory($user_id) {
+    $sql = "SELECT ";
+    $sql .= "histories.name as history_name,";
+    $sql .= "histories.vicinity,";
+    $sql .= "users_histories.created_at ";
+    $sql .= "FROM users_histories ";
+    $sql .= "JOIN users ON users.id = users_histories.user_id ";
+    $sql .= "JOIN histories ON histories.id = users_histories.history_id ";
+    $sql .= "WHERE users.id = :id";
+
+    $stmt = $this->connect->prepare($sql);
+    $params = array(':id'=>$user_id);
+    $stmt->execute($params);
+    $result = $stmt->fetchAll();
+    return $result;
+  }
+
 
 
   // バリデーション

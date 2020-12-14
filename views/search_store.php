@@ -33,6 +33,10 @@ try {
 
 
 
+
+
+
+
  ?>
 
 
@@ -55,6 +59,18 @@ try {
 // 現在地所得JS
 var infowindow;
 var ret = new Array();
+var rendererOptions = {
+	// draggable: true,	//ドラッグ操作の有効/無効
+	// preserveViewport: true,	//ズームの有無
+	suppressMarkers: true,	//デフォルトのマーカーを非表示
+	polylineOptions: {	//ルートの色と太さはここで変える
+		strokeColor:"#FF4F50",	//色
+		strokeWeight:3	//太さ
+	}
+};
+
+
+
 function initMap() {
 
   //現在位置を許可させ、位置を取得する javascript
@@ -73,7 +89,15 @@ function initMap() {
           center: mapPosition,
           zoom: 15
         };
+
+        var directionsRenderer = new google.maps.DirectionsRenderer(rendererOptions);
+        var directionsService = new google.maps.DirectionsService();
         var map = new google.maps.Map(mapArea, mapOptions);
+
+        directionsRenderer.setMap(map);
+        directionsRenderer.setPanel(document.getElementById('directionsPanel'));
+
+	      // google.maps.event.addListener(directionsRenderer,'directions_changed', function(){});
 
         //現在地の緯度経度を中心にマップに円を描く
         var circleOptions = {
@@ -103,7 +127,7 @@ function initMap() {
         service.nearbySearch({
           location: mapPosition,
           radius: 1000,
-          // openNow: true,
+          openNow: true,
           keyword: 'ラーメン'
         }, callback);
 
@@ -119,7 +143,7 @@ function initMap() {
           }
         }
 
-        // マーカーをクリックしたときの動作
+        // マーカーをクリックしたときの動作 + パネル表示
         function createMarker(place) {
           var placeLoc = place.geometry.location;
           var placeList = document.getElementById("places");
@@ -139,14 +163,14 @@ function initMap() {
           // 吹き出しの中身
           google.maps.event.addListener(marker, 'click', function() {
             infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 'サイト：'
-            + place.opening + '<br>' + '住所: ' + place.vicinity  + '</div>');
+            + place.place_id + '<br>' + '住所: ' + place.vicinity  + '</div>');
 
             infowindow.open(map, this);
           });
 
           var photos = place.photos;
           const li = document.createElement("li");
-          li.innerHTML = '<div class="shoplist_wrapp"><img class="place_photos" src='
+          li.innerHTML = '<div class="shoplist_wrapp"><img class="place_photos" alt="nophoto" src='
           + place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '><div class="shoplist_info"><strong>'
           + place.name + '</strong><br>' + '<span class="place_vicinity">'
           + place.vicinity + '</span><form action="" enctype="multipart/form-data" method="post"><input type="text" name="name" class="place_info-input" value="'
@@ -156,6 +180,40 @@ function initMap() {
 
           placeList.appendChild(li);
         }
+        calcRoute(directionsRenderer, directionsService);
+
+        function calcRoute(directionsRenderer, directionsService) {
+          var request = {
+            origin: mapPosition,
+            destination: '魂心家 青葉台',
+            travelMode: 'WALKING',
+          };
+          directionsService.route(request, function(result, status) {
+            if (status == 'OK') {
+              directionsRenderer.setDirections(result);
+            }
+          });
+        }
+
+        // $('#right_panel').on('click', '.place_info-submit', function($_POST) {
+        //
+        //   // ルート設定
+        //   var request = {
+        //     origin: mapPosition,    //出発地
+        //     destination: 'ChIJn7LAUc35GGARFNT9zCer3q4',    //目的地
+        //     travelMode: 'WALKING',   //交通手段（歩行）
+        //     optimizeWaypoints: true,	//最適化して、最短ルートを取得するように指定
+        //   };
+        //
+        //   directionsService.route(request, function(response, status) {
+        //     debugger;
+        //     if (status == 'OK') {
+        //       directionsRenderer.setDirections(response);
+        //     }
+        //   });
+        //
+        // });
+
 
       },
       // エラーハンドル
@@ -215,6 +273,8 @@ function initMap() {
 
       </div>
 
+    </div>
+    <div id="directionsPanel">
     </div>
 
 

@@ -120,3 +120,13 @@ form .place_info-submit {
 .place_id-submit:hover {
   cursor: pointer;
 }
+
+#directionsPanel {
+  font-family: "Roboto", "sans-serif";
+  line-height: 30px;
+  padding-left: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: #fafafa;
+}

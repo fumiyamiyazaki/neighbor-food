@@ -55,6 +55,7 @@ class User extends DB {
     $sql = "SELECT ";
     $sql .= "histories.name as history_name,";
     $sql .= "histories.vicinity,";
+    $sql .= "histories.img,";
     $sql .= "users_histories.created_at ";
     $sql .= "FROM users_histories ";
     $sql .= "JOIN users ON users.id = users_histories.user_id ";

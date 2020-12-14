@@ -22,6 +22,7 @@ try {
     $result['user'] = $user->findById($user_id);
     $history = $user->findHistory($user_id);
 
+
   }
 
 }catch(PDOException $e) {
@@ -29,7 +30,10 @@ try {
 }
 
 
+
+
  ?>
+
 
 
 
@@ -65,12 +69,17 @@ try {
 
           <!-- お気に入り店一覧 for文で回す -->
           <?php foreach($history as $row): ?>
+            <?php
+            $cipher = 'aes-128-ecb';
+            $key = 'key';
+            $row['img'] = openssl_decrypt($row['img'], $cipher, $key);
+            ?>
             <li class="fav_s-flame">
               <p class="went_time"><?=$row['created_at']?></p>
               <div class="fav_s">
 
                 <div class="fav_s-img">
-                  <img src="../img/main.jpg" alt="お店の写真">
+                  <img src="<?=$row['img']?>" alt="お店の写真">
                 </div>
 
                 <div class="fav_s-info">

@@ -5,9 +5,14 @@ require_once ("../config/config.php");
 require_once ("../model/History.php");
 
 // ログイン画面を経由したかを判定
-if(!isset($_SESSION['User']) && !isset($_SESSION['Store'])) {
+if(!isset($_SESSION['User'])) {
   header('location: index.php');
   exit;
+}
+
+if($_POST) {
+  $_SESSION['store'] = $_POST;
+  $storeName = $_SESSION['store']['name'];
 }
 
 
@@ -34,9 +39,6 @@ try {
 
 
 
-
-
-
  ?>
 
 
@@ -54,6 +56,7 @@ try {
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?key=&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
 <script>
+
 </script>
 <script>
 // 現在地所得JS
@@ -70,7 +73,7 @@ var rendererOptions = {
 };
 
 
-
+// グーグルAPIのURLからコールバックされる
 function initMap() {
 
   //現在位置を許可させ、位置を取得する javascript
@@ -90,10 +93,12 @@ function initMap() {
           zoom: 15
         };
 
+        // グーグルマップAPI、ダイレクションAPIを宣言
         var directionsRenderer = new google.maps.DirectionsRenderer(rendererOptions);
         var directionsService = new google.maps.DirectionsService();
         var map = new google.maps.Map(mapArea, mapOptions);
 
+        // ルートとサイドパネルを地図上にセット
         directionsRenderer.setMap(map);
         directionsRenderer.setPanel(document.getElementById('directionsPanel'));
 
@@ -129,11 +134,12 @@ function initMap() {
           radius: 1000,
           openNow: true,
           keyword: 'ラーメン'
-        }, callback);
+        }, callback);   //検索後、コールバック関数を呼び出す
 
         //地図上にマーカーをプロット
         function callback(results, status, pagination) {
           if(status === google.maps.places.PlacesServiceStatus.OK) {
+            // 取得した店の数だけ関数を呼び出す
             for(var i = 0; i < results.length; i++) {
               createMarker(results[i]);
               if(pagination.hasNextPage) {
@@ -143,7 +149,7 @@ function initMap() {
           }
         }
 
-        // マーカーをクリックしたときの動作 + パネル表示
+        // マーカーをクリックしたときの動作 + サイドパネル表示
         function createMarker(place) {
           var placeLoc = place.geometry.location;
           var placeList = document.getElementById("places");
@@ -168,51 +174,54 @@ function initMap() {
             infowindow.open(map, this);
           });
 
+          // サイドパネルに取得した店の情報を表示
           var photos = place.photos;
           const li = document.createElement("li");
           li.innerHTML = '<div class="shoplist_wrapp"><img class="place_photos" alt="nophoto" src='
           + place.photos[0].getUrl({'maxWidth': 200, 'maxHeight': 200}) + '><div class="shoplist_info"><strong>'
           + place.name + '</strong><br>' + '<span class="place_vicinity">'
-          + place.vicinity + '</span><form action="" enctype="multipart/form-data" method="post"><input type="text" name="name" class="place_info-input" value="'
+          + place.vicinity + '</span><form action="" id="store_form" enctype="multipart/form-data" method="post"><input type="text" name="name" class="place_info-input" value="'
           + place.name + '"><input type="text" name="vicinity" class="place_info-input" value="'
           + place.vicinity + '"><input type="text" name="img" class="place_info-input" value="'
-          + place.photos[0].getUrl() + '"><input type="submit" class="place_info-submit" value="この店に行く"></form></div></div>';
+          + place.photos[0].getUrl() + '"><button type="button" id="go_btn" value="'
+          + place.name + '">この店に行く</button><input type="submit" id="arrival_btn" value="到着"></form></div></div>';
 
           placeList.appendChild(li);
         }
-        calcRoute(directionsRenderer, directionsService);
 
-        function calcRoute(directionsRenderer, directionsService) {
+        // ルート表示のトリガー
+        $('#right_panel').on('click', '#go_btn', function() {
+
+          // クリック時のcssの変化js
+          $(this).closest('li').addClass('cli');
+          $(this).closest('li').prev('li').removeClass('cli');
+          $('#right_panel').find('li').css("opacity","0.3");
+          $('.cli').css("opacity","1");
+
+          // ボタンの値を取得し、引数に入れ関数を呼び出す
+          var placeName = $(this).attr('value');
+          calcRoute(placeName)
+        });
+
+
+
+        // ルート表示
+        function calcRoute(placeName) {
           var request = {
             origin: mapPosition,
-            destination: '魂心家 青葉台',
+            destination: placeName,
             travelMode: 'WALKING',
           };
           directionsService.route(request, function(result, status) {
             if (status == 'OK') {
               directionsRenderer.setDirections(result);
+
             }
           });
         }
 
-        // $('#right_panel').on('click', '.place_info-submit', function($_POST) {
-        //
-        //   // ルート設定
-        //   var request = {
-        //     origin: mapPosition,    //出発地
-        //     destination: 'ChIJn7LAUc35GGARFNT9zCer3q4',    //目的地
-        //     travelMode: 'WALKING',   //交通手段（歩行）
-        //     optimizeWaypoints: true,	//最適化して、最短ルートを取得するように指定
-        //   };
-        //
-        //   directionsService.route(request, function(response, status) {
-        //     debugger;
-        //     if (status == 'OK') {
-        //       directionsRenderer.setDirections(response);
-        //     }
-        //   });
-        //
-        // });
+
+
 
 
       },
@@ -234,6 +243,8 @@ function initMap() {
     console.log(ret);
   }
 }
+
+
 
 
 
@@ -264,7 +275,7 @@ function initMap() {
       <div class="search_map-wrapp">
 
         <div id="right_panel">
-          <h2>Open-Now</h2>
+          <h2 id="h2">Open-Now</h2>
           <ul id="places">
           </ul>
         </div>

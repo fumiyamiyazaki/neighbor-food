@@ -168,8 +168,9 @@ function initMap() {
 
           // 吹き出しの中身
           google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + 'サイト：'
-            + place.place_id + '<br>' + '住所: ' + place.vicinity  + '</div>');
+            infowindow.setContent('<div><strong>'
+            + place.name + '</strong><br><br>' + '住所: '
+            + place.vicinity  + '</div>');
 
             infowindow.open(map, this);
           });
@@ -184,7 +185,7 @@ function initMap() {
           + place.name + '"><input type="text" name="vicinity" class="place_info-input" value="'
           + place.vicinity + '"><input type="text" name="img" class="place_info-input" value="'
           + place.photos[0].getUrl() + '"><button type="button" id="go_btn" value="'
-          + place.name + '">この店に行く</button><input type="submit" id="arrival_btn" value="到着"></form></div></div>';
+          + place.vicinity + '">この店に行く</button><input type="submit" id="arrival_btn" value="到着"></form></div></div>';
 
           placeList.appendChild(li);
         }
@@ -199,17 +200,17 @@ function initMap() {
           $('.cli').css("opacity","1");
 
           // ボタンの値を取得し、引数に入れ関数を呼び出す
-          var placeName = $(this).attr('value');
-          calcRoute(placeName)
+          var destination = $(this).attr('value');
+          calcRoute(destination)
         });
 
 
 
         // ルート表示
-        function calcRoute(placeName) {
+        function calcRoute(destination) {
           var request = {
             origin: mapPosition,
-            destination: placeName,
+            destination: destination,
             travelMode: 'WALKING',
           };
           directionsService.route(request, function(result, status) {

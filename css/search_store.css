@@ -120,6 +120,9 @@ form #arrival_btn, #go_btn {
 #arrival_btn, #go_btn:hover {
   cursor: pointer;
 }
+#arrival_btn {
+  display: none;
+}
 
 #directionsPanel {
   font-family: "Roboto", "sans-serif";

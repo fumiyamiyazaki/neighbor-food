@@ -21,7 +21,7 @@ try {
     $user_id = $_SESSION['User']['id'];
     $result['user'] = $user->findById($user_id);
     $history = $user->findHistory($user_id);
-
+    
 
   }
 

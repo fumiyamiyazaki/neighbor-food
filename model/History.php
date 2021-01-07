@@ -45,6 +45,21 @@ class History extends DB {
   }
 
 
+  // ユーザーのアプリ利用歴を時間帯ごとに抽出
+  public function usingHisotry() {
+    $sql = "SELECT ";
+    $sql .= "DATE_FORMAT(created_at, '%H') as used_time,";
+    $sql .= "COUNT(*) as count ";
+    $sql .= "FROM histories ";
+    $sql .= "GROUP BY DATE_FORMAT(created_at, '%H')";
+
+    $stmt = $this->connect->prepare($sql);
+    $stmt->execute();
+    $result = $stmt->fetchAll();
+    return $result;
+  }
+
+
 
 
 

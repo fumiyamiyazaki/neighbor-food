@@ -54,7 +54,7 @@ try {
 <link rel="stylesheet" type="text/css" href="../css/search_store.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery.js"></script>
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBAh1ztNgo9-76YEPOTkZt01BttjQ-QGvw&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
+<script src="//maps.googleapis.com/maps/api/js?key=&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
 <script>
 
 </script>
@@ -132,7 +132,7 @@ function initMap() {
         service.nearbySearch({
           location: mapPosition,
           radius: 1000,
-          openNow: true,
+          // openNow: true,
           keyword: 'ラーメン'
         }, callback);   //検索後、コールバック関数を呼び出す
 
@@ -198,6 +198,8 @@ function initMap() {
           $(this).closest('li').prev('li').removeClass('cli');
           $('#right_panel').find('li').css("opacity","0.3");
           $('.cli').css("opacity","1");
+          $(this).closest('li').find('#arrival_btn').css("display","inline");
+          $(this).closest('li').find('#go_btn').css("display","none");
 
           // ボタンの値を取得し、引数に入れ関数を呼び出す
           var destination = $(this).attr('value');

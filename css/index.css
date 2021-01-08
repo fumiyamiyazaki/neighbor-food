@@ -344,8 +344,8 @@
   writing-mode: vertical-lr;
   letter-spacing: 2rem;
   position: absolute;
-  top: -15vh;
-  left: 18vw;
+  top: -32vh;
+  left: 16vw;
   z-index: 3;
   color: #FF4F50;
 }
@@ -380,6 +380,7 @@
   font-size: 1vw;
   font-family: serif;
   letter-spacing: 0.1rem;
+  /* margin-right: 60px; */
 }
 
 

@@ -173,18 +173,18 @@ session_start();
       <div class="int2_wrapp">
 
         <div class="blog_wrapp">
-          <h3>blog</h3>
+          <h3>history</h3>
           <div class="blog_page">
-            <img src="../img/blogs.png" alt="ブログの画像">
+            <img src="../img/history.png" alt="ブログの画像">
           </div>
           <div class="int2_text">
-            <p>neighbor-foodに登録しているお店のブログが閲覧できます。<br><br>
-              中にはここだけの、お得な情報があるかも</p>
+            <p>neighbor-foodを利用して行ったお店は,<br><br>
+              アカウント画面から閲覧できます。</p>
           </div>
         </div>
 
         <div class="int-blog_btn">
-          <p><a href="search_blog.php">blog →</a></p>
+          <p><a href="user_account.php">アカウントページへ →</a></p>
         </div>
 
       </div>

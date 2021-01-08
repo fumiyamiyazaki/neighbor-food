@@ -89,9 +89,9 @@ try {
 
     </div>
 
-    <div class="store_link-login">
+    <!-- <div class="store_link-login">
       <p>店舗として登録は<a href="store_login.php">こちら</a></p>
-    </div>
+    </div> -->
 
 
   </div>

@@ -95,9 +95,9 @@ try {
       </div>
     </div>
 
-    <div class="store_link-new">
+    <!-- <div class="store_link-new">
       <p>店舗として登録は<a href="store_new.php">こちら</a></p>
-    </div>
+    </div> -->
 
 
   </div>

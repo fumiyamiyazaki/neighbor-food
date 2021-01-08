@@ -19,11 +19,56 @@ session_start();
 <script type="text/javascript" src="../js/jquery-css-transform.js"></script>
 <script type="text/javascript" src="../js/rotate3Di.js"></script>
 <script>
+// window.addEventListener('DOMContentLoaded', function(){
+//
+//     window.addEventListener('scroll', function(){
+//       console.log("縦スクロール：" + window.scrollY);
+//     });
+//
+//   });
+
   $(function() {
+    fadeIn();
+    scrollDisplay();
+    fadeUp();
     spin();
     scrollTop();
   });
 
+  function fadeIn() {
+    const div = document.querySelector('.main_content');
+    div.animate([{opacity:'0'}, {opacity:'1'}],2000);
+  }
+
+  function scrollDisplay() {
+    const nav = document.querySelector('.shared_header');
+    const btn = document.querySelector('.index_top-btn');
+    nav.style.display = 'none';
+    btn.style.display = 'none';
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 250) {
+        nav.style.display = 'flex';
+        btn.style.display = 'block';
+      }
+    });
+  }
+
+  function fadeUp() {
+    const intr = document.querySelector('.head_p');
+    const intTxt = document.querySelector('.int_text');
+    const first_img = document.querySelector('.first_st-img');
+    window.addEventListener('scroll', function() {
+      if(window.scrollY > 580) {
+        intr.classList.add('fade_up');
+      }
+      if(window.scrollY > 847) {
+        intTxt.classList.add('fade_up');
+      }
+      if(window.scrollY > 1200) {
+        first_img.classList.add('fade_up');
+      }
+    })
+  }
 
   function spin() {
     $('#card').hover(
@@ -50,6 +95,8 @@ session_start();
       return false;
     });
   }
+
+
 
 </script>
 </head>
@@ -99,7 +146,7 @@ session_start();
           <div class="useage">
             <h3>useage</h3>
           </div>
-          <img src="../img/first.jpg" alt="スマホ登録画像">
+          <img src="../img/first.jpg" alt="スマホ登録画像" class="first_st-img">
         </div>
       </div>
 

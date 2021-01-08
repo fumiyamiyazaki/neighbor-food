@@ -7,8 +7,8 @@ require_once ("../model/User.php");
 
 
 
-// ログイン画面を経由したか判定
-if(!isset($_SESSION['User'])) {
+// ログイン画面を経由したか,一般ユーザーか判定
+if(!isset($_SESSION['User']) || $_SESSION['User']['role'] != 1) {
   header('location: index.php');
   exit;
 }
@@ -21,7 +21,7 @@ try {
     $user_id = $_SESSION['User']['id'];
     $result['user'] = $user->findById($user_id);
     $history = $user->findHistory($user_id);
-    
+
 
   }
 

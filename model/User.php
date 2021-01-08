@@ -16,12 +16,13 @@ class User extends DB {
 
   // 新規ユーザー登録
   public function addUser($arr) {
-    $sql = "INSERT INTO users(name, email, password, created_at) VALUES(:name, :email, :password, :created_at)";
+    $sql = "INSERT INTO users(name, email, password, role, created_at) VALUES(:name, :email, :password, :role, :created_at)";
     $stmt = $this->connect->prepare($sql);
     $params = array(
       ':name'=>$arr['name'],
       ':email'=>$arr['email'],
       ':password'=>$arr['password'],
+      ':role'=>1,
       ':created_at'=>date('Y-m-d H:i:s')
     );
     $stmt->execute($params);

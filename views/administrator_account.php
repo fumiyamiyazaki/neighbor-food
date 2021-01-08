@@ -1,9 +1,15 @@
 <?php
-
 session_start();
 
 require_once ("../config/config.php");
 require_once ("../model/History.php");
+
+// ログイン画面を経由したか,管理者ユーザーか判定
+if(!isset($_SESSION['User']) || $_SESSION['User']['role'] != 0) {
+  header('location: index.php');
+  exit;
+}
+
 
 try {
   $history = new History($host, $dbname, $user, $pass);
@@ -40,7 +46,6 @@ try {
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 <script>
-
 $(function() {
   barGraph();
 
@@ -55,7 +60,7 @@ function barGraph() {
     var hour = Number(dataArray[$i]['used_time']);
     var count = dataArray[$i]['count'];
     // console.log(count);
-    console.log(hour);
+    // console.log(hour);
     switch(hour) {
       case 5:
         data.splice(0,0,count);
@@ -178,6 +183,7 @@ function barGraph() {
 
 }
 
+
 </script>
 </head>
 <body>
@@ -195,7 +201,7 @@ function barGraph() {
 
   </div>
 
-  
+
 
   <?php require("shared/_footer.php") ?>
 

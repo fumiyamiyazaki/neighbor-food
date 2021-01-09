@@ -106,7 +106,7 @@
   margin-left: 20px;
   letter-spacing: 0.5rem;
   opacity: 0;
-  transition: 1s;
+  transition: 1.5s;
   margin-top: 100px;
   color: #FF4F50;
 }
@@ -116,7 +116,7 @@
 }
 .int_text {
   opacity: 0;
-  transition: 1s;
+  transition: 2s;
   margin-top: 80px;
 }
 .int_text p {
@@ -148,13 +148,9 @@
   top: 5vh;
   z-index: 2;
   opacity: 0;
-  transition: 1s;
+  transition: 1.5s;
   margin-top: 80px;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
-}
-.fade_up {
-  opacity: 1;
-  margin-top: 0;
 }
 
 .useage {
@@ -189,6 +185,9 @@
   margin: 0 auto;
   padding: 0 20px;
   position: relative;
+  opacity: 0;
+  transition: 1.5s;
+  margin-top: 80px;
 }
 .second_img img {
   height: 100%;
@@ -232,20 +231,23 @@
 .third_wrapp {
   height: 100%;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 200px;
 }
-.third_img {
+.third_img-wrapp {
   height: 60vh;
   width: 50vw;
   position: relative;
 }
-.third_img img {
+.third_img {
   height: 100%;
   width: 100%;
   position: absolute;
   top: 17vh;
   left: 2vw;
   z-index: 2;
+  opacity: 0;
+  transition: 1.5s;
+  margin-top: 80px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
 }
 .usage_int {
@@ -290,6 +292,7 @@
   border: 3px solid #f4f4f4;
   border-radius: 20px;
   padding: 20px;
+  opacity: 0;
 }
 .step_img {
   width: 150px;
@@ -323,15 +326,20 @@
   position: relative;
   overflow: hidden;
 }
-.step_btn p {
+.regist_fade {
   height: 8vh;
   width: 60vw;
   line-height: 10vh;
   position: absolute;
-  right: -5vw;
+  right: -60vw;
+  transition: 1.5s;
   font-size: 1.3vw;
   font-family: serif;
   border-bottom: 1px solid #FF4F50;
+}
+.regist_fade-right {
+  position: absolute;
+  right: -5vw;
 }
 
 .step_btn a {
@@ -353,7 +361,7 @@
   width: 100%;
   position: relative;
 }
-.blog_wrapp h3 {
+.his_txt {
   font-size: 55px;
   font-family: cursive;
   writing-mode: vertical-lr;
@@ -362,6 +370,9 @@
   top: -32vh;
   left: 16vw;
   z-index: 3;
+  opacity: 0;
+  transition: 2s;
+  margin-top: 80px;
   color: #FF4F50;
 }
 .blog_page {
@@ -373,13 +384,19 @@
   z-index: 2;
   background-color: #f4f4f4;
 }
-.blog_page img {
+.his_img {
   height: 100%;
   width: 80%;
   position: absolute;
+  top: 30vh;
+  left: -45vw;
+  transition: 2s;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
+}
+.his_img-fade {
+  position: absolute;
   top: -13vh;
   left: 10vw;
-  box-shadow: 3px 3px 3px rgba(0,0,0,0.4);
   -webkit-transform: rotate(10deg);
 }
 
@@ -405,8 +422,13 @@
   width: 31vw;
   position: absolute;
   top: -35vh;
-  right: 0;
+  right: -325vw;
+  transition: 1.5s;
   border-bottom: 1px solid #FF4F50;
+}
+.account_fade {
+  position: absolute;
+  right: 0;
 }
 .int-blog_btn p {
   height: 100%;
@@ -452,6 +474,11 @@
 .top_btn {
   font-size: 2rem;
   color: #fff;
+}
+
+.fade_up {
+  opacity: 1;
+  margin-top: 0;
 }
 
 

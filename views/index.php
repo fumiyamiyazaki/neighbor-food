@@ -42,13 +42,10 @@ session_start();
 
   function scrollDisplay() {
     const nav = document.querySelector('.shared_header');
-    const btn = document.querySelector('.index_top-btn');
     nav.style.display = 'none';
-    btn.style.display = 'none';
     window.addEventListener('scroll', function(){
       if(window.scrollY > 250) {
         nav.style.display = 'flex';
-        btn.style.display = 'block';
       }
     });
   }
@@ -58,11 +55,13 @@ session_start();
     const intTxt = document.querySelector('.int_text');
     const first_img = document.querySelector('.first_st-img');
     const second_img = document.querySelector('.second_img');
+    const usage_int = document.querySelector('.usage_int');
     const third_img = document.querySelector('.third_img');
     const cards = document.querySelectorAll('.step_card');
     const regist_txt = document.querySelector('.regist_fade');
     const account_txt = document.querySelector('.int-blog_btn');
     const his_txt = document.querySelector('.his_txt');
+    const account_int = document.querySelector('.int2_text');
     const his_img = document.querySelector('.his_img');
     window.addEventListener('scroll', function() {
       if(window.scrollY > 580) {
@@ -74,10 +73,13 @@ session_start();
       if(window.scrollY > 1200) {
         first_img.classList.add('fade_up');
       }
-      if(window.scrollY > 2000) {
+      if(window.scrollY > 1900) {
         second_img.classList.add('fade_up');
       }
-      if(window.scrollY > 2600) {
+      if(window.scrollY > 2400) {
+        usage_int.classList.add('fade_up');
+      }
+      if(window.scrollY > 2700) {
         third_img.classList.add('fade_up');
       }
       if(window.scrollY >3300) {
@@ -91,10 +93,13 @@ session_start();
       if(window.scrollY > 3500) {
         account_txt.classList.add('account_fade');
       }
-      if(window.scrollY > 3800) {
+      if(window.scrollY > 3900) {
         his_txt.classList.add('fade_up');
       }
       if(window.scrollY > 4000) {
+        account_int.classList.add('fade_up');
+      }
+      if(window.scrollY > 4200) {
         his_img.classList.add('his_img-fade');
       }
     })
@@ -272,9 +277,9 @@ session_start();
   <div class="bottom_img-table"></div>
   </section>
 
-  <div class="index_top-btn">
+  <!-- <div class="index_top-btn">
     <a href="#top_page"><i class="fas fa-arrow-up top_btn"></i></a>
-  </div>
+  </div> -->
 
 
 

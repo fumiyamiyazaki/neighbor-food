@@ -57,6 +57,13 @@ session_start();
     const intr = document.querySelector('.head_p');
     const intTxt = document.querySelector('.int_text');
     const first_img = document.querySelector('.first_st-img');
+    const second_img = document.querySelector('.second_img');
+    const third_img = document.querySelector('.third_img');
+    const cards = document.querySelectorAll('.step_card');
+    const regist_txt = document.querySelector('.regist_fade');
+    const account_txt = document.querySelector('.int-blog_btn');
+    const his_txt = document.querySelector('.his_txt');
+    const his_img = document.querySelector('.his_img');
     window.addEventListener('scroll', function() {
       if(window.scrollY > 580) {
         intr.classList.add('fade_up');
@@ -66,6 +73,29 @@ session_start();
       }
       if(window.scrollY > 1200) {
         first_img.classList.add('fade_up');
+      }
+      if(window.scrollY > 2000) {
+        second_img.classList.add('fade_up');
+      }
+      if(window.scrollY > 2600) {
+        third_img.classList.add('fade_up');
+      }
+      if(window.scrollY >3300) {
+        cards[0].animate({opacity:'1'},2500);
+        cards[1].animate({opacity:'1'},2500);
+        cards[2].animate({opacity:'1'},2500);
+      }
+      if(window.scrollY > 3400) {
+        regist_txt.classList.add('regist_fade-right');
+      }
+      if(window.scrollY > 3500) {
+        account_txt.classList.add('account_fade');
+      }
+      if(window.scrollY > 3800) {
+        his_txt.classList.add('fade_up');
+      }
+      if(window.scrollY > 4000) {
+        his_img.classList.add('his_img-fade');
       }
     })
   }
@@ -146,7 +176,7 @@ session_start();
           <div class="useage">
             <h3>useage</h3>
           </div>
-          <img src="../img/first.jpg" alt="スマホ登録画像" class="first_st-img">
+          <img src="../img/first.png" alt="スマホ登録画像" class="first_st-img">
         </div>
       </div>
 
@@ -154,7 +184,7 @@ session_start();
       <div class="second_wrapp">
         <div class="second_img">
           <img src="../img/map.png" alt="地図の画像">
-          <a href="#" class="second_search">
+          <a href="search_store.php" class="second_search">
             <div class="second_search-box">
               <span><a href="search_store.php">search<i class="fas fa-search"></i></a></span>
             </div>
@@ -165,8 +195,8 @@ session_start();
 
       <!-- third -->
       <div class="third_wrapp">
-        <div class="third_img">
-          <img src="../img/store2.jpg" alt="お店の画像">
+        <div class="third_img-wrapp">
+          <img src="../img/store2.jpg" alt="お店の画像" class="third_img">
           <div class="usage_int">
             <p><span>neightbor-foodの使い方</span><br><br><br>
               まずはneightbor-foodに会員登録をして下さい。<br><br>
@@ -214,15 +244,15 @@ session_start();
       </div>
 
       <div class="step_btn">
-        <p><a href="registrations/new.php">← 会員登録</a></p>
+        <p class="regist_fade"><a href="registrations/new.php">← 会員登録</a></p>
       </div>
 
       <div class="int2_wrapp">
 
         <div class="blog_wrapp">
-          <h3>history</h3>
+          <h3 class="his_txt">history</h3>
           <div class="blog_page">
-            <img src="../img/history.png" alt="ブログの画像">
+            <img src="../img/history.png" alt="ブログの画像" class="his_img">
           </div>
           <div class="int2_text">
             <p>neighbor-foodを利用して行ったお店は,<br><br>

@@ -56,9 +56,11 @@ try {
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?key=&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
 <script>
+window.onload = function() {
+const load = document.getElementById('loading');
+setTimeout(load.classList.add('loaded'), 2000);
+}
 
-</script>
-<script>
 // 現在地所得JS
 var infowindow;
 var ret = new Array();
@@ -266,7 +268,7 @@ function initMap() {
 </script> -->
 </head>
 <body>
-
+  <?php require("shared/_loading.html") ?>
   <div class="search_flame-wrapp">
 
 

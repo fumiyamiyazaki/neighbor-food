@@ -484,6 +484,10 @@
   opacity: 1;
   margin-top: 0;
 }
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
 
 
 

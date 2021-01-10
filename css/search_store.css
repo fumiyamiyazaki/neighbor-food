@@ -133,3 +133,8 @@ form #arrival_btn, #go_btn {
   overflow: auto;
   background-color: #fafafa;
 }
+
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}

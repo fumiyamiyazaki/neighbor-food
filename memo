@@ -1,0 +1,8 @@
+スクロール量取得
+// window.addEventListener('DOMContentLoaded', function(){
+//
+//     window.addEventListener('scroll', function(){
+//       console.log("縦スクロール：" + window.scrollY);
+//     });
+//
+//   });

@@ -15,129 +15,10 @@ session_start();
 <link rel="stylesheet" type="text/css" href="../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" src="../js/jquery-css-transform.js"></script>
-<script type="text/javascript" src="../js/rotate3Di.js"></script>
-<script>
-// window.addEventListener('DOMContentLoaded', function(){
-//
-//     window.addEventListener('scroll', function(){
-//       console.log("縦スクロール：" + window.scrollY);
-//     });
-//
-//   });
-
-  $(function() {
-    fadeIn();
-    scrollDisplay();
-    fadeUp();
-    spin();
-    scrollTop();
-  });
-
-  function fadeIn() {
-    const div = document.querySelector('.main_content');
-    div.animate([{opacity:'0'}, {opacity:'1'}],2000);
-  }
-
-  function scrollDisplay() {
-    const nav = document.querySelector('.shared_header');
-    nav.style.display = 'none';
-    window.addEventListener('scroll', function(){
-      if(window.scrollY > 250) {
-        nav.style.display = 'flex';
-      }
-    });
-  }
-
-  function fadeUp() {
-    const intr = document.querySelector('.head_p');
-    const intTxt = document.querySelector('.int_text');
-    const first_img = document.querySelector('.first_st-img');
-    const second_img = document.querySelector('.second_img');
-    const usage_int = document.querySelector('.usage_int');
-    const third_img = document.querySelector('.third_img');
-    const cards = document.querySelectorAll('.step_card');
-    const regist_txt = document.querySelector('.regist_fade');
-    const account_txt = document.querySelector('.int-blog_btn');
-    const his_txt = document.querySelector('.his_txt');
-    const account_int = document.querySelector('.int2_text');
-    const his_img = document.querySelector('.his_img');
-    window.addEventListener('scroll', function() {
-      if(window.scrollY > 580) {
-        intr.classList.add('fade_up');
-      }
-      if(window.scrollY > 847) {
-        intTxt.classList.add('fade_up');
-      }
-      if(window.scrollY > 1200) {
-        first_img.classList.add('fade_up');
-      }
-      if(window.scrollY > 1900) {
-        second_img.classList.add('fade_up');
-      }
-      if(window.scrollY > 2400) {
-        usage_int.classList.add('fade_up');
-      }
-      if(window.scrollY > 2700) {
-        third_img.classList.add('fade_up');
-      }
-      if(window.scrollY >3300) {
-        cards[0].animate({opacity:'1'},2500);
-        cards[1].animate({opacity:'1'},2500);
-        cards[2].animate({opacity:'1'},2500);
-      }
-      if(window.scrollY > 3400) {
-        regist_txt.classList.add('regist_fade-right');
-      }
-      if(window.scrollY > 3500) {
-        account_txt.classList.add('account_fade');
-      }
-      if(window.scrollY > 3900) {
-        his_txt.classList.add('fade_up');
-      }
-      if(window.scrollY > 4000) {
-        account_int.classList.add('fade_up');
-      }
-      if(window.scrollY > 4200) {
-        his_img.classList.add('his_img-fade');
-      }
-    })
-  }
-
-  function spin() {
-    $('#card').hover(
-    function () {$(this).rotate3Di('flip', 500);},
-    function () {$(this).rotate3Di('unflip', 500);}
-    );
-    $('#card2').hover(
-    function () {$(this).rotate3Di('flip', 500);},
-    function () {$(this).rotate3Di('unflip', 500);}
-    );
-    $('#card3').hover(
-    function () {$(this).rotate3Di('flip', 500);},
-    function () {$(this).rotate3Di('unflip', 500);}
-    );
-  }
-
-  function scrollTop() {
-    $('a[href^=#]').click(function(){
-      var speed = 500;
-      var href = $(this).attr('href');
-      var target = $(href == '#' || href == '' ? 'html':href);
-      var position = target.offset().top;
-      $('body,html').animate({scrollTop:position},speed,'swing')
-      return false;
-    });
-  }
-
-
-
-</script>
 </head>
 <body>
 
-
+  <?php require("shared/_loading.html") ?>
   <?php require("shared/_header.php"); ?>
 
   <section>
@@ -287,7 +168,123 @@ session_start();
   <?php require("shared/_footer.php") ?>
 
 
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/jquery-css-transform.js"></script>
+  <script type="text/javascript" src="../js/rotate3Di.js"></script>
+  <script>
+  // ローディングアニメーション
+    window.onload = function() {
+      const load = document.getElementById('loading');
+      window.setTimeout(function() {
+        load.classList.add('loaded');
+        fadeIn();
+      },4000);
+    }
 
+    $(function() {
+      scrollDisplay();
+      fadeUp();
+      spin();
+      scrollTop();
+    });
+
+    function fadeIn() {
+      const div = document.querySelector('.main_content');
+      div.animate([{opacity:'0'}, {opacity:'1'}],2000);
+    }
+
+    function scrollDisplay() {
+      const nav = document.querySelector('.shared_header');
+      nav.style.display = 'none';
+      window.addEventListener('scroll', function(){
+        if(window.scrollY > 250) {
+          nav.style.display = 'flex';
+        }
+      });
+    }
+
+    function fadeUp() {
+      const intr = document.querySelector('.head_p');
+      const intTxt = document.querySelector('.int_text');
+      const first_img = document.querySelector('.first_st-img');
+      const second_img = document.querySelector('.second_img');
+      const usage_int = document.querySelector('.usage_int');
+      const third_img = document.querySelector('.third_img');
+      const cards = document.querySelectorAll('.step_card');
+      const regist_txt = document.querySelector('.regist_fade');
+      const account_txt = document.querySelector('.int-blog_btn');
+      const his_txt = document.querySelector('.his_txt');
+      const account_int = document.querySelector('.int2_text');
+      const his_img = document.querySelector('.his_img');
+      window.addEventListener('scroll', function() {
+        if(window.scrollY > 580) {
+          intr.classList.add('fade_up');
+        }
+        if(window.scrollY > 847) {
+          intTxt.classList.add('fade_up');
+        }
+        if(window.scrollY > 1200) {
+          first_img.classList.add('fade_up');
+        }
+        if(window.scrollY > 1900) {
+          second_img.classList.add('fade_up');
+        }
+        if(window.scrollY > 2400) {
+          usage_int.classList.add('fade_up');
+        }
+        if(window.scrollY > 2700) {
+          third_img.classList.add('fade_up');
+        }
+        if(window.scrollY >3300) {
+          cards[0].animate({opacity:'1'},2500);
+          cards[1].animate({opacity:'1'},2500);
+          cards[2].animate({opacity:'1'},2500);
+        }
+        if(window.scrollY > 3400) {
+          regist_txt.classList.add('regist_fade-right');
+        }
+        if(window.scrollY > 3500) {
+          account_txt.classList.add('account_fade');
+        }
+        if(window.scrollY > 3900) {
+          his_txt.classList.add('fade_up');
+        }
+        if(window.scrollY > 4000) {
+          account_int.classList.add('fade_up');
+        }
+        if(window.scrollY > 4200) {
+          his_img.classList.add('his_img-fade');
+        }
+      })
+    }
+
+    function spin() {
+      $('#card').hover(
+      function () {$(this).rotate3Di('flip', 500);},
+      function () {$(this).rotate3Di('unflip', 500);}
+      );
+      $('#card2').hover(
+      function () {$(this).rotate3Di('flip', 500);},
+      function () {$(this).rotate3Di('unflip', 500);}
+      );
+      $('#card3').hover(
+      function () {$(this).rotate3Di('flip', 500);},
+      function () {$(this).rotate3Di('unflip', 500);}
+      );
+    }
+
+    function scrollTop() {
+      $('a[href^=#]').click(function(){
+        var speed = 500;
+        var href = $(this).attr('href');
+        var target = $(href == '#' || href == '' ? 'html':href);
+        var position = target.offset().top;
+        $('body,html').animate({scrollTop:position},speed,'swing')
+        return false;
+      });
+    }
+
+  </script>
 
 
 

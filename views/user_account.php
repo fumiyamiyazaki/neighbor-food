@@ -92,7 +92,8 @@ try {
           <?php endforeach; ?>
           <!--  -->
 
-
+          <a href="registrations/edit.php">編集</a>
+          <a href="registrations/delete.php">退会</a>
 
 
 

@@ -51,6 +51,30 @@ class User extends DB {
     return $result;
   }
 
+  // 編集 update
+  public function edit($arr) {
+    $sql = "UPDATE users SET name = :name, email = :email, password = :password, updated_at = :updated_at WHERE id = :id";
+    $stmt = $this->connect->prepare($sql);
+    $params = array(
+      ':id'=>$arr['id'],
+      ':name'=>$arr['name'],
+      ':email'=>$arr['email'],
+      ':password'=>$arr['password'],
+      ':updated_at'=>date('Y-m-d H:i:s'),
+    );
+    $stmt->execute($params);
+  }
+
+  // 削除 delete
+  public function delete($id = null) {
+    if(isset($id)) {
+      $sql = "DELETE FROM users WHERE id = :id";
+      $stmt = $this->connect->prepare($sql);
+      $params = array(':id'=>$id);
+      $stmt->execute($params);
+    }
+  }
+
   // ストア履歴の参照
   public function findHistory($user_id) {
     $sql = "SELECT ";

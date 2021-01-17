@@ -27,7 +27,7 @@ session_start();
     <div class="main_left">
       <h1>neighbor - <span>Food</span></h1>
       <h2 class="about_p">今すぐ行けるラーメン屋を探せる</h2>
-      <h3 class="about_text">即行けラーメン検索プラットフォーム</h3>
+      <h3 class="about_text">即行けるラーメン検索プラットフォーム</h3>
       <!-- <div class="near_btn"><a href="#">近くのお店</a></div> -->
     </div>
 

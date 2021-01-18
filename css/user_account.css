@@ -37,6 +37,23 @@
   letter-spacing: .1rem;
   color: #909090;
 }
+.u_edit {
+  display: flex;
+  justify-content: space-around;
+}
+.u_edit i {
+  margin-top: 25px; 
+}
+.u_edit a {
+  font-size: 1rem;
+  letter-spacing: .1rem;
+  margin: 20px 20px 0 20px;
+  color: #e5e1e1;
+}
+.u_edit a:hover {
+  cursor: pointer;
+  color: #909090;
+}
 
 .fav_stores {
   height: 100vh;

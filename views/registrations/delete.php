@@ -67,6 +67,7 @@ try {
       </div>
 
       <div class="delete_bottom">
+        <p>退会すると、今までの情報が削除されます。</p>
         <div class="delete_btn">
           <a href="?del=<?php echo $_SESSION['User']['id'] ?>" onclick="if(!confirm('ID<?php echo $_SESSION['User']['id'].$_SESSION['User']['name'] ?>さんのユーザーを削除しますか？')) return false;">削除</a>
         </div>

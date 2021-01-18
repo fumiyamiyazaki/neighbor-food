@@ -47,6 +47,7 @@ try {
 <link rel="stylesheet" type="text/css" href="../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../css/user_account.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script>
 </script>
@@ -62,6 +63,11 @@ try {
       <div class="u_profile">
         <p class="u_name"><?php echo $result['user']['name'] ?></p>
         <p class="u_email"><?php echo $result['user']['email'] ?></p>
+        <div class="u_edit">
+          <i class="far fa-user"></i>
+          <a href="registrations/edit.php">編集</a>
+          <a href="registrations/delete.php">退会</a>
+        </div>
       </div>
 
       <div class="fav_stores">
@@ -92,8 +98,7 @@ try {
           <?php endforeach; ?>
           <!--  -->
 
-          <a href="registrations/edit.php">編集</a>
-          <a href="registrations/delete.php">退会</a>
+
 
 
 

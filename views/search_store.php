@@ -1,6 +1,14 @@
 <?php
 session_start();
 
+// セッション破棄
+if(isset($_GET['logout'])) {
+  $_SESSION = array();
+  session_destroy();
+  header('location: /my_app/views/index.php');
+  exit;
+}
+
 require_once ("../config/config.php");
 require_once ("../model/History.php");
 
@@ -10,10 +18,10 @@ if(!isset($_SESSION['User'])) {
   exit;
 }
 
-if($_POST) {
-  $_SESSION['store'] = $_POST;
-  $storeName = $_SESSION['store']['name'];
-}
+// if($_POST) {
+//   $_SESSION['store'] = $_POST;
+//   $storeName = $_SESSION['store']['name'];
+// }
 
 
 try {
@@ -54,7 +62,7 @@ try {
 <link rel="stylesheet" type="text/css" href="../css/search_store.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery.js"></script>
-<script src="//maps.googleapis.com/maps/api/js?key=&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyCQLiK3BefVx2uwPaRfTPlvL-tuOE1OZ5Q&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
 <script>
 window.onload = function() {
 const load = document.getElementById('loading');
@@ -134,7 +142,7 @@ function initMap() {
         service.nearbySearch({
           location: mapPosition,
           radius: 1000,
-          openNow: true,
+          // openNow: true,
           keyword: 'ラーメン'
         }, callback);   //検索後、コールバック関数を呼び出す
 

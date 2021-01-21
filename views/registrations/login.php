@@ -13,10 +13,14 @@ try {
     $message = $user->login_validate($_POST);
     if(empty($message['email']) && empty($message['password'])) {
       $result = $user->loginUser($_POST);
-      $_SESSION['User'] = $result;
-      if(!empty($_SESSION['User'])) {
-        header('location: ../index.php');
-        exit;
+      if($_POST['email'] !== @$result['email'] && $_POST['password'] !== @$result['password']) {    // @ エラーハンドラ
+        $conf_error = "ユーザーIDもしくはメールアドレスが間違っています。";
+      } else {
+        $_SESSION['User'] = $result;
+        if(!empty($_SESSION['User'])) {
+          header('location: ../user_account.php');
+          exit;
+        }
       }
     }
   }
@@ -81,6 +85,7 @@ try {
             <input type="text" name="password" placeholder="半角英数字を含めた4文字以上">
             <?php if(isset($message['password'])) echo "<p class='error'>".$message['password']."</p>" ?>
           </div>
+          <?php if(isset($conf_error)) echo "<p class='error'>".$conf_error."</p>" ?>
 
           <button type="submit" class="login_btn">ログインする</button>
         </form>

@@ -97,7 +97,7 @@ class User extends DB {
 
 
   // バリデーション
-  public function new_validate($arr) {
+  public function new_edit_validate($arr) {
     $error = array();
 
     if(empty($arr['name'])) {
@@ -114,6 +114,10 @@ class User extends DB {
 
     if(empty($arr['password'])) {
       $error['password'] = "パスワードを入力してください";
+    }else {
+      if(!preg_match('/\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{4,100}+\z/i', $arr['password'])) {
+        $error['password'] = "パスワードは半角英数字をそれぞれ1文字以上含んだ4文字以上で設定してください。";
+      }
     }
 
     return $error;
@@ -133,6 +137,7 @@ class User extends DB {
     if(empty($arr['password'])) {
       $message['password'] = "パスワードを入力してください。";
     }
+
     return $message;
   }
 

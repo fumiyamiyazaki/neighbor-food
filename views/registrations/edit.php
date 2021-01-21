@@ -17,10 +17,13 @@ try {
 
   // 編集処理
   if($_POST) {
-    $user->edit($_POST);
-    if(!empty($_SESSION['User'])) {
-      header('location: ../user_account.php');
-      exit;
+    $message = $user->new_edit_validate($_POST);
+    if(empty($message['name']) && empty($message['email']) && empty($message['password'])) {
+      $user->edit($_POST);
+      if(!empty($_SESSION['User'])) {
+        header('location: ../user_account.php');
+        exit;
+      }
     }
   }
 
@@ -74,7 +77,7 @@ try {
               氏名
             </label>
             <input type="text" name="name" placeholder="例） 麺太郎" value="<?php if(isset($_SESSION['User'])) echo $_SESSION['User']['name']; ?>">
-            <?php if(isset($message['name'])) echo "<p clas='error'>".$message['name']."</p>" ?>
+            <?php if(isset($message['name'])) echo "<p class='error'>".$message['name']."</p>" ?>
           </div>
 
           <div>

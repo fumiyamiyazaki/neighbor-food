@@ -103,6 +103,9 @@
 .shared_footer-nav li a {
   color: #111111;
 }
+.error {
+  color: red;
+}
 
 
 

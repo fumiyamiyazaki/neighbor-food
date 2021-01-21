@@ -5,18 +5,20 @@ session_start();
 require_once ("../../config/config.php");
 require_once ("../../model/User.php");
 
+
+
 try {
   $user = new User($host, $dbname, $user, $pass);
   $user->connectdb();
 
   if($_POST) {
-    $message = $user->new_validate($_POST);
+    $message = $user->new_edit_validate($_POST);
     if(empty($message['name']) && empty($message['email']) && empty($message['password'])) {
       $user->addUser($_POST);
       $result = $user->lastInsertUserId();
       $_SESSION['User'] = $result;
       if(!empty($_SESSION['User'])) {
-        header('location: ../index.php');
+        header('location: ../user_account.php');
         exit;
       }
     }
@@ -70,7 +72,7 @@ try {
               氏名
             </label>
             <input type="text" name="name" placeholder="例） 麺太郎" value="<?php if(isset($result['User'])) echo $result['User']['name']; ?>">
-            <?php if(isset($message['name'])) echo "<p clas='error'>".$message['name']."</p>" ?>
+            <?php if(isset($message['name'])) echo "<p class='error'>".$message['name']."</p>" ?>
           </div>
 
           <div>

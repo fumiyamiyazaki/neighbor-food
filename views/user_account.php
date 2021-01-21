@@ -9,7 +9,7 @@ require_once ("../model/User.php");
 
 // ログイン画面を経由したか,一般ユーザーか判定
 if(!isset($_SESSION['User']) || $_SESSION['User']['role'] != 1) {
-  header('location: index.php');
+  header('location: /my_app/views/registrations/new.php');
   exit;
 }
 
@@ -28,6 +28,8 @@ try {
 }catch(PDOException $e) {
   echo 'データベース接続失敗'.$e->getMessage();
 }
+
+
 
 
 

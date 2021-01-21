@@ -1,20 +1,19 @@
-<?php declare(strict_types=1);
+<?php declare(strict_types = 1);
 use PHPUnit\Framework\TestCase;
+// require_once("../model/User.php");
 
 class UserTest extends TestCase {
-  public function testPushAndPop() {
-    $stack = [];
-    $this->assertSame(0, count($stack));
+  private $target = null;
 
-    array_push($stack, 'foo');
-    $this->assertSame('foo', $stack[count($stack)-1]);
-    $this->assertSame(1, count($stack));
-
-    $this->assertSame('foo', array_pop($stack));
-    $this->assertSame(0, count($stack));
+  public function setUp() :void
+  {
+    $this->target = new User();
   }
+
+  public function testIsUserTrue() {
+    $this->assertEquals(true, $this->target->is_user($this->test_id, '1'));
+  }
+
 }
-
-
 
  ?>

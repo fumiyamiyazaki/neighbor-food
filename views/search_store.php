@@ -6,7 +6,7 @@ require_once ("../model/History.php");
 
 // ログイン画面を経由したかを判定
 if(!isset($_SESSION['User'])) {
-  header('location: index.php');
+  header('location: /my_app/views/registrations/new.php');
   exit;
 }
 

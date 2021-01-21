@@ -1,3 +1,12 @@
+<?php
+// セッション破棄
+if(isset($_GET['logout'])) {
+  $_SESSION = array();
+  session_destroy();
+  header('location: /my_app/views/index.php');
+}
+ ?>
+
 <div class="shared_footer">
   <div class="shared_footer-nav">
     <a href="index.php"><h2>neigbor-<span>Food</span></h2></a>

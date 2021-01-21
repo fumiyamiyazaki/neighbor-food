@@ -1,5 +1,13 @@
 <?php
 session_start();
+// セッション破棄
+if(isset($_GET['logout'])) {
+  $_SESSION = array();
+  session_destroy();
+  header('location: /my_app/views/index.php');
+  exit;
+}
+
 
 require_once ("../config/config.php");
 require_once ("../model/History.php");

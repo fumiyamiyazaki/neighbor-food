@@ -23,7 +23,7 @@ if(isset($_GET['logout'])) {
         <a href="/my_app/views/index.php">top</a>
       </li>
 
-      <?php if(isset($_SESSION['User'])): ?>
+      <?php if(isset($_SESSION['User']) && $_SESSION['User']['role'] == 1): ?>
         <li>
           <a href="/my_app/views/search_store.php">search</a>
         </li>

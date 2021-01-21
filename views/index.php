@@ -28,7 +28,9 @@ session_start();
       <h1>neighbor - <span>Food</span></h1>
       <h2 class="about_p">今すぐ行けるラーメン屋を探せる</h2>
       <h3 class="about_text">即行けるラーメン検索プラットフォーム</h3>
-      <!-- <div class="near_btn"><a href="#">近くのお店</a></div> -->
+      <?php if(isset($_SESSION['User'])):?>
+        <div class="near_btn"><a href="search_store.php">近くのお店</a></div>
+      <?php endif; ?>
     </div>
 
     <div class="main_right">
@@ -173,6 +175,7 @@ session_start();
   <script type="text/javascript" src="../js/rotate3Di.js"></script>
   <script>
   // ローディングアニメーション
+
     window.onload = function() {
       const load = document.getElementById('loading');
       window.setTimeout(function() {
@@ -180,6 +183,8 @@ session_start();
         fadeIn();
       },4000);
     }
+
+
 
     $(function() {
       scrollDisplay();

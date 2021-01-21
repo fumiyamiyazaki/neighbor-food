@@ -83,3 +83,13 @@
   color: #fff;
   margin-top: 20px;
 }
+
+.pass_icon {
+  position: relative;
+  top: -27px;
+  left: 870px;
+}
+.pass_icon i {
+  cursor: pointer;
+  color: #909090;
+}

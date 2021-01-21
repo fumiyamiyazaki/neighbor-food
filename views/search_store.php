@@ -134,7 +134,7 @@ function initMap() {
         service.nearbySearch({
           location: mapPosition,
           radius: 1000,
-          // openNow: true,
+          openNow: true,
           keyword: 'ラーメン'
         }, callback);   //検索後、コールバック関数を呼び出す
 
@@ -269,6 +269,7 @@ function initMap() {
 </head>
 <body>
   <?php require("shared/_loading.html") ?>
+
   <div class="search_flame-wrapp">
 
 

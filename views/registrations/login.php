@@ -17,8 +17,11 @@ try {
         $conf_error = "ユーザーIDもしくはメールアドレスが間違っています。";
       } else {
         $_SESSION['User'] = $result;
-        if(!empty($_SESSION['User'])) {
-          header('location: ../user_account.php');
+        if(!empty($_SESSION['User']) && $_SESSION['User']['role'] == 1) {
+          header('location: ../index.php');
+          exit;
+        }elseif(!empty($_SESSION['User']) && $_SESSION['User']['role'] == 0) {
+          header('location: ../administrator_account.php');
           exit;
         }
       }

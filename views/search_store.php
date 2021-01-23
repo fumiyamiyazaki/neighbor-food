@@ -64,10 +64,11 @@ try {
 <script type="text/javascript" src="../js/jquery.js"></script>
 <script src="//maps.googleapis.com/maps/api/js?key=&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
 <script>
-window.onload = function() {
+// ローディングアニメーション
+$(window).load(function() {
 const load = document.getElementById('loading');
 setTimeout(load.classList.add('loaded'), 2000);
-}
+});
 
 // 現在地所得JS
 var infowindow;
@@ -142,7 +143,7 @@ function initMap() {
         service.nearbySearch({
           location: mapPosition,
           radius: 1000,
-          // openNow: true,
+          openNow: true,
           keyword: 'ラーメン'
         }, callback);   //検索後、コールバック関数を呼び出す
 
@@ -194,22 +195,26 @@ function initMap() {
           + place.vicinity + '</span><form action="" id="store_form" enctype="multipart/form-data" method="post"><input type="text" name="name" class="place_info-input" value="'
           + place.name + '"><input type="text" name="vicinity" class="place_info-input" value="'
           + place.vicinity + '"><input type="text" name="img" class="place_info-input" value="'
-          + place.photos[0].getUrl() + '"><button type="button" id="go_btn" value="'
-          + place.vicinity + '">この店に行く</button><input type="submit" id="arrival_btn" value="到着"></form></div></div>';
+          + place.photos[0].getUrl() + '"><button type="button" id="go_btn" class="go_b" value="'
+          + place.vicinity + '">この店に行く</button><input type="submit" id="arrival_btn" class="arr_b" value="到着"></form></div></div>';
 
           placeList.appendChild(li);
         }
 
         // ルート表示のトリガー
-        $('#right_panel').on('click', '#go_btn', function() {
+        $('#places').on('click', '#go_btn', function() {
 
           // クリック時のcssの変化js
+          $('#places').find('li').removeClass('cli');
           $(this).closest('li').addClass('cli');
-          $(this).closest('li').prev('li').removeClass('cli');
-          $('#right_panel').find('li').css("opacity","0.3");
+          $('#places').find('li').css("opacity","0.3");
           $('.cli').css("opacity","1");
+          $('#places').find('.go_b').css("display","block");
+          $('#places').find('.arr_b').css("display","none");
           $(this).closest('li').find('#arrival_btn').css("display","inline");
           $(this).closest('li').find('#go_btn').css("display","none");
+
+
 
           // ボタンの値を取得し、引数に入れ関数を呼び出す
           var destination = $(this).attr('value');

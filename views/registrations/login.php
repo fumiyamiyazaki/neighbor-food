@@ -46,8 +46,31 @@ try {
 <link rel="stylesheet" type="text/css" href="../../css/reset.css">
 <link rel="stylesheet" type="text/css" href="../../css/shared.css">
 <link rel="stylesheet" type="text/css" href="../../css/login.css">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../../js/jquery.js"></script>
 <script>
+$(function() {
+  passVisible();
+});
+
+function passVisible() {
+  $(".eye_btn").click(function() {
+    if($(this).hasClass("fas fa-eye")) {
+      $(this).removeClass("fas fa-eye");
+      $(this).addClass("fas fa-eye-slash");
+    }else if ($(this).hasClass("fas fa-eye-slash")) {
+      $(this).removeClass("fas fa-eye-slash");
+      $(this).addClass("fas fa-eye");
+    }
+
+    var input = document.querySelector('#js_pass');
+    if(input.getAttribute("type") == "password") {
+      input.setAttribute("type", "text");
+    }else {
+      input.setAttribute("type", "password");
+    }
+  })
+}
 </script>
 </head>
 <body>
@@ -85,7 +108,8 @@ try {
             <label for="password">
               パスワード
             </label>
-            <input type="text" name="password" placeholder="半角英数字を含めた4文字以上">
+            <input type="password" name="password" id="js_pass" placeholder="半角英数字を含めた4文字以上">
+            <span class="pass_icon"><i class="eye_btn fas fa-eye"></i></span>
             <?php if(isset($message['password'])) echo "<p class='error'>".$message['password']."</p>" ?>
           </div>
           <?php if(isset($conf_error)) echo "<p class='error'>".$conf_error."</p>" ?>

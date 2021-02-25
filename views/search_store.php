@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once ("../key.php");
+// require_once ("../key.php");
 
 // セッション破棄
 if(isset($_GET['logout'])) {
@@ -63,7 +63,7 @@ try {
 <link rel="stylesheet" type="text/css" href="../css/search_store.css">
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <script type="text/javascript" src="../js/jquery.js"></script>
-<script src="//maps.googleapis.com/maps/api/js?key=<?php echo $key;?>&language=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBgfkdVw6iFBmGVDsMhiKKtVXriAc6PdQU=ja&libraries=drawing,geometry,places,directions,visualization&fields=photos,opening_hours&callback=initMap" async defer></script>
 <script>
 // ローディングアニメーション
 $(window).load(function() {

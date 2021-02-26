@@ -22,3 +22,34 @@ MAMP/MySQL/PHP
 
 ## DB
 データーベース名：my_app
+
+## Users テーブル
+|Columm|Type|Options|
+|:------|:----|:-------|
+|id|int|null: false|
+|name|varchar(255)|null: false|
+|email|varchar(255)|null: false|
+|password|varchar(255)|null: false|
+|role|int|null: false|
+|created_at|datetime|null: false|
+|updated_at|timestamp|null: false|
+
+## Histories テーブル
+|Columm|Type|Options|
+|:------|:----|:-------|
+|id|int|null: false|
+|name|varchar(255)|null: false|
+|vicinity|varchar(255)|null: false|
+|img|varchar(512)|null: false|
+|created_at|datetime|null: false|
+|updated_at|timestamp|null: false|
+
+## users_histories テーブル
+|Columm|Type|Options|
+|:------|:----|:-------|
+|id|int|null: false|
+|user_id|int|null: false|
+|history_id|int|null: false|
+|created_at|datetime|null: false|
+|updated_at|timestamp|null: false|
+
